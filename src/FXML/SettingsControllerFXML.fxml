@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import Animations2D.SynchronizationAnimation?>
+<?import javafx.scene.image.ImageView?>
+
+<StackPane fx:id="BaseStackPane" stylesheets="@/Stylesheets/SettingsWindowStyle.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SettingsController">
+    <BorderPane fx:id="SettingsPaginationPane">
+        <top>
+            <GridPane fx:id="TopGridPane">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="70" halignment="CENTER"/>
+                    <ColumnConstraints minWidth="360" halignment="CENTER"/>
+                    <ColumnConstraints minWidth="70" halignment="CENTER"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints percentHeight="100" valignment="CENTER"/>
+                </rowConstraints>
+                <Label fx:id="TitleLabel" GridPane.columnIndex="1" GridPane.rowIndex="0" text="Password settings">
+                    <graphic>
+                        <ImageView fitWidth="32" fitHeight="32">
+                            <Image url="@/Icons/x64/hamsa-symbol.png"/>
+                        </ImageView>
+                    </graphic>
+                </Label>
+            </GridPane>
+        </top>
+
+        <center>
+            <BorderPane fx:id="PasswordChangePane" styleClass="PaginationInsidePanes" visible="false">
+               <center>
+                  <GridPane>
+                      <rowConstraints>
+                          <RowConstraints percentHeight="33.33" valignment="CENTER"/>
+                          <RowConstraints percentHeight="33.33" valignment="CENTER"/>
+                          <RowConstraints percentHeight="33.33" valignment="CENTER"/>
+                      </rowConstraints>
+                      <columnConstraints>
+                          <ColumnConstraints percentWidth="100" halignment="CENTER"/>
+                      </columnConstraints>
+                      <PasswordField fx:id="NewPasswordField" styleClass="SettingsPasswordInputTextFields" GridPane.columnIndex="0" GridPane.rowIndex="0" promptText="New password"/>
+                      <PasswordField fx:id="RepeatPasswordField" styleClass="SettingsPasswordInputTextFields" GridPane.columnIndex="0" GridPane.rowIndex="1" promptText="Repeat password"/>
+                      <Label fx:id="InvalidDetailsLabel" visible="false" text="Passwords didn't mach!" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                  </GridPane>
+               </center>
+                <bottom>
+                    <HBox styleClass="BottomHBox">
+                        <Button fx:id="ChangePasswordButton" text="Change password" styleClass="SettingsActionButtons"/>
+                    </HBox>
+                </bottom>
+            </BorderPane>
+            <BorderPane fx:id="AdditionalInfoChangePane" styleClass="PaginationInsidePanes" visible="false">
+                <center>
+                    <VBox fx:id="AdditionalInfoCenterVBox">
+                        <TextArea fx:id="AdditionalInfoTextArea" styleClass="AdditionalInfoTextArea" wrapText="true" promptText="Additional Information"/>
+                    </VBox>
+                </center>
+                <bottom>
+                    <HBox styleClass="BottomHBox">
+                        <Button fx:id="ChangeAdditionalInfoButton" text="Change additional information" styleClass="SettingsActionButtons"/>
+                    </HBox>
+                </bottom>
+            </BorderPane>
+            <BorderPane fx:id="CacheRegisterPane" styleClass="PaginationInsidePanes" visible="false">
+                <center>
+                    <VBox fx:id="CacheTextCenterVBox">
+                        <Label fx:id="CacheImageCountLabel" text="0"/>
+                        <Label fx:id="CacheInfoLabel" text="Pictures are registered in cache"/>
+                        <Label fx:id="CacheInfoLabel1" text="Click on button down bellow to clear cache"/>
+                    </VBox>
+                </center>
+                <bottom>
+                    <HBox styleClass="BottomHBox">
+                        <Button fx:id="ClearImageCacheButton" text="Clear image cache" styleClass="SettingsActionButtons"/>
+                    </HBox>
+                </bottom>
+            </BorderPane>
+            <Pagination fx:id="Pagination" maxPageIndicatorCount="3" pageCount="3"/>
+        </center>
+    </BorderPane>
+    <GridPane fx:id="LoadingPane" visible="false">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="100" halignment="CENTER"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="250" valignment="BOTTOM"/>
+            <RowConstraints minHeight="150" valignment="TOP"/>
+            <RowConstraints minHeight="100" valignment="CENTER"/>
+        </rowConstraints>
+
+        <SynchronizationAnimation fx:id="SyncAnimation" GridPane.columnIndex="0" GridPane.rowIndex="0" fitHeight="64" fitWidth="64">
+            <Image url="@/Icons/x64/synchronization.png"/>
+        </SynchronizationAnimation>
+        <Label fx:id="TransactionText" GridPane.columnIndex="0" GridPane.rowIndex="1" text="Connecting to database"/>
+        <HBox fx:id="ButtonHBox" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <Button text="Go Back" fx:id="BackButton" styleClass="SettingsActionButtons" visible="false"/>
+        </HBox>
+    </GridPane>
+</StackPane>

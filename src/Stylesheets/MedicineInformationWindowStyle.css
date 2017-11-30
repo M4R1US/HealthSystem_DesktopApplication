@@ -1,0 +1,213 @@
+
+#MedicineInfoBasePane {
+    -fx-background-color: linear-gradient(to top, #607D8B,#7f8c8d);
+    -fx-alignment: center;
+}
+
+#LoadingPane {
+    -fx-background-color: rgba(44, 62, 80,0.6);
+}
+
+
+#CenterGridPane {
+    -fx-background-insets: 10 20 20 20;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-insets: 10 20 20 20;
+    -fx-border-color: transparent;
+}
+
+#BrowseListViewPane {
+    -fx-background-color: rgba(44,62,80,0.05);
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: rgba(0,0,0,0.10);
+
+}
+
+
+#BrowseTopGridPane {
+    -fx-background-color: rgba(44,62,80,0.2);
+    -fx-padding: 0 0 0 10;
+    -fx-alignment: center;
+    -fx-background-insets: 10 20 0 20;
+    -fx-spacing: 15;
+    -fx-background-radius: 2 2 2 2;
+}
+
+#SearchLabel {
+    -fx-min-width: 160;
+    -fx-min-height: 70;
+    -fx-background-insets: 10 0 0 0;
+    -fx-padding: 10 0 0 0;
+    -fx-background-color: rgba(44,62,80,0.1);
+    -fx-font: 20px "Akrobat Medium";
+    -fx-text-fill: rgba(255,255,255,0.3);
+    -fx-alignment: center;
+    -fx-graphic-text-gap: 10;
+}
+
+
+#SearchLabel:hover {
+    -fx-text-fill: rgba(255,255,255,0.7);
+    -fx-cursor: hand;
+}
+
+#BrowseTopGridPane .text-field {
+    -fx-text-fill: #f8f8f8;
+    -fx-font-size: 18;
+    -fx-background-color: transparent;
+    -fx-padding: 10 0 0 0;
+    -fx-min-width: inherit;
+}
+
+/* List view styles */
+
+.DefaultBrowseListView .list-cell:odd, .list-cell:even, .scroll-bar{
+    -fx-background-color: transparent;
+}
+
+.DefaultBrowseListView .list-cell:odd, .list-cell:even,
+.scroll-bar:vertical .increment-button, .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+}
+
+.DefaultBrowseListView .scroll-bar:horizontal .increment-arrow,
+.scroll-bar:horizontal .decrement-arrow,
+.scroll-bar:horizontal .increment-button,
+.scroll-bar:horizontal .decrement-button {
+    -fx-padding: 0;
+}
+
+.DefaultBrowseListView .list-cell {
+    -fx-font-size: 17;
+    -fx-text-fill: #f8f8f8;
+}
+
+
+.DefaultBrowseListView {
+    -fx-border-insets: 0 0 15 0;
+    -fx-border-color:transparent;
+    -fx-background-color: transparent;
+    -fx-border-width: 4 4 4 4;
+}
+
+#BrowseListViewPane .scroll-bar:vertical .increment-arrow, #BrowseListViewPane .scroll-bar:vertical .decrement-arrow {
+    -fx-background-color: rgba(0,51,102,0.8);
+}
+
+#BrowseListViewPane #BrowseListView .thumb {
+    -fx-background-color: rgba(0,51,102,0.5);
+}
+
+#BrowseListView .list-cell:selected {
+    -fx-background-color: rgba(0,0,0,0.1);
+}
+
+/* Information pane  */
+
+#InformationPane {
+    -fx-min-height: 500;
+    -fx-max-height: 500;
+    -fx-background-color: rgba(44,62,80,0.1);
+    -fx-padding: 0 0 0 5;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: rgba(0,0,0,0.1);
+}
+
+#MedicineNameLabel {
+    -fx-min-height: 60;
+    -fx-text-fill: rgba(255,255,255,0.85);
+    -fx-font: 24px "Akrobat Bold";
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: rgba(0,0,0,0.15);
+    -fx-border-insets: 0 10 0 10;
+}
+
+#SwitchInformationGridPane {
+    -fx-background-color: rgba(0,0,0,0.10);
+    -fx-min-width: 450;
+    -fx-max-width: 450;
+    -fx-min-height: 55;
+    -fx-background-insets: 0 0 10 0;
+}
+
+.SwitchLabels {
+    -fx-text-fill: rgba(255,255,255,0.85);
+    -fx-font: 16px "Decalotype SemiBold";
+    -fx-min-height: 45;
+    -fx-min-width: 150;
+    -fx-alignment: center;
+}
+
+.SwitchLabels:hover {
+    -fx-cursor: hand;
+    -fx-text-fill: rgb(131,172,157);
+}
+
+
+/* Pagination options here */
+
+.CustomPaginationStyle {
+    -fx-arrows-visible: false;
+    -fx-tooltip-visible: false;
+    -fx-page-information-visible:false;
+}
+
+
+.PaginationInsidePanes {
+    -fx-min-height: 300;
+    -fx-min-width: 500;
+    -fx-background-color: inherit;
+    -fx-border-insets: 0 70 10 70;
+    -fx-border-color: transparent;
+}
+
+.InputTextAreas {
+    -fx-background-color: transparent;
+    -fx-background:transparent;
+    -fx-min-height: 300;
+    -fx-max-height: 300;
+    -fx-min-width: 500;
+    -fx-border-width: 2 2 2 2;
+    -fx-border-insets: 10 70 0 70;
+    -fx-background-insets: 10 70 0 70;
+    -fx-border-color: rgba(0,0,0,0.10);
+    -fx-font: 22px "Akrobat Regular";
+    -fx-text-fill: rgba(52,73,94,0.5);
+    -fx-alignment: center;
+}
+
+.InputTextAreas:disabled, .InputTextAreas:disabled > *{
+    -fx-opacity: 1;
+}
+
+.InputTextAreas .scroll-bar:vertical, .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.InputTextAreas .scroll-bar:horizontal .increment-arrow,
+.scroll-bar:horizontal .decrement-arrow,
+.scroll-bar:horizontal .increment-button,
+.scroll-bar:horizontal .decrement-button {
+    -fx-padding: 0;
+}
+
+.InputTextAreas .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.InputTextAreas .scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+
+
+.InputTextAreas .scroll-pane .content{
+    -fx-background-color: transparent;
+}
+
+.InputTextAreas .thumb {
+    -fx-background-color: rgba(0, 51, 102, 0.8);
+}
+
+.InputTextAreas .scroll-bar:vertical .increment-arrow , .InputTextAreas .scroll-bar:vertical .decrement-arrow {
+    -fx-background-color: rgba(0,51,102,0.8);
+}

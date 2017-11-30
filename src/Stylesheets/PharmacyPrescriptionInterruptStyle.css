@@ -1,0 +1,371 @@
+
+
+/* Common style attributes */
+
+.text-field {
+    -fx-text-fill: #f8f8f8;
+    -fx-font-size: 18;
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 25;
+    -fx-min-height: 50;
+    -fx-max-height: 50;
+}
+
+.DefaultBrowseListView {
+    -fx-border-insets: 15 5 0 0;
+    -fx-border-color:transparent;
+    -fx-padding: 5 5 10 0;
+    -fx-background-insets: 15 5 0 0;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-radius: 2 2 2 2;
+    -fx-background-radius: 2 2 2 2;
+    -fx-background-color: rgba(108, 122, 137,0.6);
+}
+
+#LoadingPane {
+    -fx-background-color: rgba(44, 62, 80,0.6);
+}
+
+#BrowseListViewPane .scroll-bar:vertical .increment-arrow, #BrowseListViewPane .scroll-bar:vertical .decrement-arrow {
+    -fx-background-color: rgba(52,73,94,0.8);
+}
+
+#BrowseListViewPane .scroll-bar:horizontal .increment-arrow, #BrowseListViewPane .scroll-bar:horizontal .decrement-arrow {
+    -fx-background-color: rgba(52,73,94,0.8);
+}
+
+#BrowseListViewPane #BrowseListView .thumb {
+    -fx-background-color: rgba(52,73,94,0.8);
+}
+
+.DefaultBrowseListView .list-cell:odd, .list-cell:even, .scroll-bar{
+    -fx-background-color: transparent;
+}
+
+
+
+.DefaultBrowseListView .list-cell:odd, .list-cell:even,
+.scroll-bar:vertical .increment-button, .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+}
+
+.DefaultBrowseListView .scroll-bar:horizontal .increment-arrow,
+.scroll-bar:horizontal .decrement-arrow,
+.scroll-bar:horizontal .increment-button,
+.scroll-bar:horizontal .decrement-button {
+    -fx-padding: 0;
+}
+
+.DefaultBrowseListView .list-cell {
+    -fx-text-fill: rgba(255,255,255,0.6);
+    -fx-font: 20px "Akrobat Bold";
+    -fx-background-insets: 0 0 0 5;
+    -fx-padding: 0 0 0 10;
+}
+
+.DefaultBrowseListView .list-cell:selected {
+    -fx-background-color: rgba(0,0,0,0.10);
+    -fx-padding: 0 0 0 30;
+    -fx-font: 25px "Akrobat Bold";
+}
+
+/* End of common style attributes */
+
+
+/* Browse patient pane design */
+
+/* TOP */
+
+#BrowseTopPane {
+    -fx-background-color: rgba(108, 122, 137,0.6);
+}
+
+.BrowseTitlePane {
+    -fx-min-height: 50;
+    -fx-max-height: 50;
+    -fx-background-radius: 2 2 2 2;
+}
+
+
+.IconHBox {
+    -fx-background-color: rgba(0,0,0,0.10);
+    -fx-alignment: center;
+    -fx-min-height: 50;
+    -fx-max-height: 50;
+    -fx-min-width: 50;
+    -fx-max-width: 50;
+
+}
+
+.SearchLabels {
+    -fx-min-height: 50;
+    -fx-max-height: 50;
+    -fx-min-width: 170;
+    -fx-max-width: 170;
+    -fx-background-color: rgba(0,0,0,0.10);
+    -fx-alignment: center;
+    -fx-font: 20px "Akrobat Medium";
+    -fx-text-fill: rgba(255,255,255,0.3);
+    -fx-graphic-text-gap: 10;
+
+}
+
+.SearchLabels:hover {
+    -fx-text-fill: rgba(255,255,255,0.7);
+    -fx-cursor: hand;
+}
+
+.ButtonImages {
+    -fx-opacity: 0.7;
+}
+
+/* END OF TOP */
+
+/* CENTER */
+
+#BrowseCenterGridPane {
+    -fx-hgap: 15;
+}
+
+.BrowsePreViewPaneStyle {
+    -fx-background-color: rgba(44,62,80,0.2);
+    -fx-background-insets: 15 0 0 0;
+    -fx-padding: 15 0 0 0;
+    -fx-alignment: center;
+}
+
+#PreViewTopHBox {
+    -fx-min-height: 60;
+    -fx-max-height: 60;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: rgba(52,73,94,0.4);
+    -fx-border-insets: 0 10 0 10;
+    -fx-alignment: center;
+}
+
+#PreViewTopHBox .label {
+    -fx-text-fill: #CFD8DC;
+    -fx-font: 20px "Akrobat ExtraBold";
+}
+
+#TypeLabel {
+    -fx-font: 20px "Akrobat SemiBold";
+    -fx-text-fill: rgba(255,255,255,0.80);
+}
+
+#NameLabel {
+    -fx-font: 25px "Akrobat Light";
+    -fx-text-fill: rgba(52,73,94,0.8);
+}
+
+#InfoVBox {
+    -fx-alignment: center;
+    -fx-spacing: 30;
+}
+
+#LookupLabel {
+    -fx-min-height: 60;
+    -fx-font: 20px "Akrobat Regular";
+    -fx-text-fill: rgba(216,216,216,0.80);
+    -fx-border-width: 1 0 0 0;
+    -fx-border-color: rgba(52,73,94,0.4);
+    -fx-border-insets: 0 10 0 10;
+    -fx-alignment: center;
+    -fx-cursor: hand;
+}
+
+#LookupLabel:hover {
+    -fx-text-fill: rgba(216,216,216,0.6);
+}
+
+
+/* END OF CENTER */
+
+/* END of browse patient design */
+
+/* Prescription pane style */
+
+#PrescriptionArchiveGridPane {
+    -fx-hgap: 20;
+    -fx-alignment: center;
+    -fx-padding: 0 15 0 15;
+}
+
+#PrescriptionListViewPane {
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: rgba(0,0,0,0.1);
+}
+
+#PrescriptionListViewPane {
+    /*-fx-background-color: rgba(0,0,0,0.10); */
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: rgba(0,0,0,0.1);
+}
+
+#PrescriptionListView{
+    -fx-border-insets: 5 5 15 5;
+    -fx-border-color:transparent;
+    -fx-background-color: transparent;
+    -fx-border-width: 4 4 4 4;
+}
+
+#PrescriptionListView .list-cell:odd, .list-cell:even, .scroll-bar{
+    -fx-background-color: transparent;
+}
+
+#PrescriptionListView .list-cell:odd, .list-cell:even,
+.scroll-bar:vertical .increment-button, .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+}
+
+#PrescriptionListView .scroll-bar:horizontal .increment-arrow,
+.scroll-bar:horizontal .decrement-arrow,
+.scroll-bar:horizontal .increment-button,
+.scroll-bar:horizontal .decrement-button {
+    -fx-padding: 0;
+}
+
+#PrescriptionListView .list-cell {
+    -fx-text-fill: rgba(52,73,94,0.8);
+    -fx-font: 20px "Akrobat Bold";
+}
+
+#PrescriptionListView .scroll-bar:vertical .increment-arrow, .scroll-bar:vertical .decrement-arrow, .thumb {
+    -fx-background-color: rgba(0,51,102,0.5);
+}
+
+#PrescriptionListView .list-cell:selected {
+    -fx-background-color: rgba(0,0,0,0.10);
+    -fx-padding: 0 0 0 30;
+    -fx-font: 25px "Akrobat Bold";
+}
+
+
+#InformationGridPane {
+    -fx-alignment: center;
+}
+
+.InformationHBoxes {
+    -fx-background-color: rgba(103, 128, 159,0.2);
+    -fx-min-height: 70;
+    -fx-spacing: 30;
+    -fx-alignment: center-left;
+    -fx-padding: 0 0 0 20;
+    -fx-border-width:  1 1 1 1;
+    -fx-border-color: rgba(0,0,0,0.10);
+}
+
+.CircleHBoxes {
+    -fx-min-height: 75;
+    -fx-min-width: 75;
+    -fx-alignment: center;
+}
+
+#SelectionGridPane {
+    -fx-min-height: 50;
+    -fx-max-height: 50;
+    -fx-spacing: 40;
+    -fx-alignment: center;
+    -fx-min-width: inherit;
+}
+
+.SelectionLabelsStyle {
+    -fx-font: 20px "Akrobat Regular";
+    -fx-cursor: hand;
+}
+
+
+.NameLabels {
+    -fx-text-fill: rgba(255,255,255,0.55);
+    -fx-font: 25px "Akrobat SemiBold";
+}
+
+#StatusLabel {
+    -fx-font: 20px "Decalotype Light";
+    -fx-text-fill: rgba(255,255,255,0.55);
+}
+
+#SpecialNotesPane {
+    -fx-alignment: center;
+}
+
+#CenterStackPane {
+    -fx-alignment: center;
+}
+
+#MedicineNameLabel {
+    -fx-cursor: hand;
+}
+
+#MedicineNameLabel:hover {
+    -fx-text-fill: rgba(255,255,255,0.4);
+}
+
+.SettingsActionButtons {
+    -fx-background-color: rgba(44,62,80,0.2);
+    -fx-min-width: 400;
+    -fx-min-height: 50;
+    -fx-text-fill: rgba(255,255,255,0.7);
+    -fx-font: 20px "Akrobat Bold";
+}
+
+.SettingsActionButtons:hover {
+    -fx-background-color: rgba(0,0,0,0.1);
+    -fx-text-fill: rgba(255,255,255,0.5);
+    -fx-cursor: hand;
+}
+
+#AvailableLabel {
+    -fx-graphic-text-gap: 20;
+    -fx-font: 20px "Decalotype SemiBold";
+    -fx-text-fill: rgba(255,255,255,0.6);
+}
+
+.BottomHBox {
+    -fx-alignment: center;
+}
+
+.DefaultCheckBox .box{
+    -fx-background-color: transparent;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: rgba(0, 51, 102, 0.8);
+    -fx-background-radius: 2 2 2 2;
+    -fx-border-radius: 2 2 2 2;
+}
+
+.DefaultCheckBox:selected .mark {
+    -fx-background-color: rgba(0, 51, 102, 0.8);
+}
+
+.DefaultCheckBox {
+    -fx-font: 17px  "Akrobat Bold";
+    -fx-text-fill: rgba(255,255,255,0.6);
+}
+
+
+/* End of Prescription pane style */
+
+/* Confirmation pane */
+
+#ConfirmationPane {
+    -fx-alignment: center;
+}
+
+#ConfirmationHBox {
+    -fx-alignment: center;
+    -fx-spacing: 30;
+    -fx-min-height: 100;
+    -fx-max-height: 100;
+
+}
+
+
+#ConfirmationHBox .label {
+    -fx-text-fill: rgba(255,255,255,0.6);
+    -fx-font: 30px "Akrobat Regular";
+    -fx-padding: 0 0 0 30;
+    -fx-min-height: 100;
+    -fx-max-height: 100;
+    -fx-alignment: center;
+}
+/* End of confirmation pane */

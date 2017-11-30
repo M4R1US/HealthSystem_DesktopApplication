@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.layout.StackPane?>
+
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import Animations2D.SynchronizationAnimation?>
+<StackPane fx:id="BaseStackPane" stylesheets="@/Stylesheets/EditDetailsStyle.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.EditDetailsController">
+    <BorderPane fx:id="EditDetailsPaginationPane">
+        <top>
+            <Label fx:id="TopLabel" text="First name, Last Name"/>
+        </top>
+        <center>
+            <BorderPane fx:id="AvatarPane" styleClass="PaginationInsidePanes">
+                <center>
+                    <VBox alignment="CENTER" spacing="30">
+                        <Circle fx:id="AvatarCircle" radius="60"/>
+                        <Label fx:id="AvatarBottomLabel"/>
+                    </VBox>
+                </center>
+                <bottom>
+                    <HBox styleClass="BottomHBox">
+                        <Button fx:id="DisablePictureButton" text="Disable picture" styleClass="SettingsActionButtons"/>
+                    </HBox>
+                </bottom>
+            </BorderPane>
+            <BorderPane fx:id="DetailsPane" styleClass="PaginationInsidePanes" visible="false">
+               <center>
+                  <GridPane>
+                      <rowConstraints>
+                          <RowConstraints percentHeight="33.33" valignment="CENTER"/>
+                          <RowConstraints percentHeight="33.33" valignment="CENTER"/>
+                          <RowConstraints percentHeight="33.33" valignment="CENTER"/>
+                      </rowConstraints>
+                      <columnConstraints>
+                          <ColumnConstraints percentWidth="100" halignment="CENTER"/>
+                      </columnConstraints>
+                      <TextField fx:id="FirstField" styleClass="SettingsPasswordInputTextFields" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                      <TextField fx:id="SecondField" styleClass="SettingsPasswordInputTextFields" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                      <HBox fx:id="MiddleButtonHBox" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                        <Button styleClass="MiddleButtons" text="Reset password" fx:id="ResetPasswordButton">
+                            <graphic>
+                                <ImageView fitHeight="24" fitWidth="24">
+                                    <Image url="@/Icons/x64/key.png"/>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                          <Button styleClass="MiddleButtons" text="Disable Account" fx:id="DisableButton"/>
+                      </HBox>
+                  </GridPane>
+               </center>
+                <bottom>
+                    <HBox styleClass="BottomHBox">
+                        <Button fx:id="ChangeDetailsButton" text="Change Details" styleClass="SettingsActionButtons"/>
+                    </HBox>
+                </bottom>
+            </BorderPane>
+            <BorderPane fx:id="AdditionalInfoChangePane" styleClass="PaginationInsidePanes" visible="false">
+                <center>
+                    <VBox fx:id="AdditionalInfoCenterVBox">
+                        <TextArea fx:id="AdditionalInfoTextArea" styleClass="AdditionalInfoTextArea" wrapText="true" promptText="Additional Information"/>
+                    </VBox>
+                </center>
+                <bottom>
+                    <HBox styleClass="BottomHBox">
+                        <Button fx:id="ChangeAdditionalInfoButton" text="Change additional information" styleClass="SettingsActionButtons"/>
+                    </HBox>
+                </bottom>
+            </BorderPane>
+            <Pagination fx:id="Pagination" maxPageIndicatorCount="3" pageCount="3"/>
+        </center>
+    </BorderPane>
+    <GridPane fx:id="EditLoadPane" visible="false">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="100" halignment="CENTER"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="250" valignment="BOTTOM"/>
+            <RowConstraints minHeight="150" valignment="TOP"/>
+            <RowConstraints minHeight="100" valignment="CENTER"/>
+        </rowConstraints>
+
+        <SynchronizationAnimation fx:id="SyncAnimation" GridPane.columnIndex="0" GridPane.rowIndex="0" fitHeight="64" fitWidth="64">
+            <Image url="@/Icons/x64/synchronization.png"/>
+        </SynchronizationAnimation>
+        <Label fx:id="TransactionText" GridPane.columnIndex="0" GridPane.rowIndex="1" text="Connecting to database"/>
+        <HBox fx:id="ButtonHBox" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <Button text="Go Back" fx:id="BackButton" styleClass="SettingsActionButtons" visible="false"/>
+        </HBox>
+    </GridPane>
+</StackPane>

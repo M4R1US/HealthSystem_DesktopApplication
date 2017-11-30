@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.layout.StackPane?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ListView?>
+<?import Animations2D.SynchronizationAnimation?>
+<?import javafx.scene.control.TextArea?>
+
+<StackPane fx:id="BaseStackPane" stylesheets="@/Stylesheets/MedicineInformationWindowStyle.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MedicineInformationController">
+    <BorderPane fx:id="MedicineInfoBasePane" visible="true">
+        <top>
+            <GridPane fx:id="BrowseTopGridPane">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="2.5"/>
+                    <ColumnConstraints percentWidth="77.5"/>
+                    <ColumnConstraints percentWidth="20" halignment="CENTER"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="70" maxHeight="70" valignment="CENTER"/>
+                </rowConstraints>
+                <TextField fx:id="NameInput" promptText="Medicine name" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Label text="Search" fx:id="SearchLabel" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                    <graphic>
+                        <ImageView styleClass="ButtonImages" fitHeight="32" fitWidth="32">
+                            <Image url="@/Icons/x64/search_white.png"/>
+                        </ImageView>
+                    </graphic>
+                </Label>
+            </GridPane>
+        </top>
+        <center>
+            <GridPane fx:id="CenterGridPane">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="40"/>
+                    <ColumnConstraints percentWidth="2.5"/>
+                    <ColumnConstraints percentWidth="57.5"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="500" maxHeight="500"/>
+                </rowConstraints>
+                <BorderPane fx:id="SearchPane" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <center>
+                        <BorderPane fx:id="BrowseListViewPane" styleClass="BrowseListViewPaneStyle">
+                            <center>
+                                <ListView fx:id="BrowseListView" styleClass="DefaultBrowseListView"/>
+                            </center>
+                        </BorderPane>
+                    </center>
+                </BorderPane>
+                <BorderPane fx:id="InformationPane" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                    <top>
+                        <VBox spacing="10" alignment="CENTER">
+                            <Label fx:id="MedicineNameLabel" text="No data yet"/>
+                            <GridPane fx:id="SwitchInformationGridPane">
+                                <columnConstraints>
+                                    <ColumnConstraints minWidth="150" maxWidth="150" halignment="CENTER"/>
+                                    <ColumnConstraints minWidth="150" maxWidth="150" halignment="CENTER"/>
+                                    <ColumnConstraints minWidth="150" maxWidth="150" halignment="CENTER"/>
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints minHeight="45" valignment="CENTER"/>
+                                </rowConstraints>
+                                <Label text="Description" styleClass="SwitchLabels" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                                <Label text="Usage" styleClass="SwitchLabels" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                                <Label text="Side effect" styleClass="SwitchLabels" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                            </GridPane>
+                        </VBox>
+                    </top>
+                    <center>
+                        <Pane fx:id="DescriptionPane" styleClass="PaginationInsidePanes">
+                            <TextArea fx:id="DescriptionTextArea" styleClass="InputTextAreas" disable="true" wrapText="true" text="Description is not provided"/>
+                        </Pane>
+                        <Pane fx:id="UsagePane" styleClass="PaginationInsidePanes">
+                            <TextArea fx:id="UsageTextArea" styleClass="InputTextAreas" disable="true" wrapText="true" text="Usage is not described"/>
+                        </Pane>
+                        <Pane fx:id="SideEffectPane" styleClass="PaginationInsidePanes">
+                            <TextArea fx:id="SideEffectTextArea" styleClass="InputTextAreas" disable="true" wrapText="true" text="Side effect is not described "/>
+                        </Pane>
+                        <Pagination fx:id="CustomPagination" styleClass="CustomPaginationStyle" maxPageIndicatorCount="3" pageCount="3"/>
+                    </center>
+                </BorderPane>
+            </GridPane>
+        </center>
+    </BorderPane>
+    <BorderPane fx:id="LoadingPane" visible="false">
+        <center>
+            <SynchronizationAnimation fx:id="SyncAnimation" fitWidth="64" fitHeight="64">
+                <Image url="@/Icons/x64/synchronization.png"/>
+            </SynchronizationAnimation>
+        </center>
+    </BorderPane>
+</StackPane>
+

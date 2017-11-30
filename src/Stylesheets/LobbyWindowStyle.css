@@ -1,0 +1,264 @@
+
+.LobbyBasePane, .HoverPane {
+    -fx-background-color: linear-gradient(to top, #607D8B,#7f8c8d);
+    -fx-alignment: center;
+}
+
+/* TOP */
+
+.LobbyTopHBoxStyle {
+    -fx-background-color: rgba(44,62,80,0.2);
+    -fx-min-height: 50;
+    -fx-max-height: 50;
+    -fx-alignment: center;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: rgba(0,0,0,0.1);
+}
+
+#LobbyTitleLabel {
+    -fx-padding: 0 0 0 15;
+    -fx-min-width: 340;
+    -fx-text-fill: rgba(255,255,255,0.6);
+    -fx-font: 20px "Decalotype Medium";
+    -fx-min-height: 50;
+    -fx-alignment: center-left;
+}
+
+#LoginTopHBox {
+    -fx-min-height: 50;
+    -fx-max-height: 50;
+    -fx-alignment: center;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #7A8085;
+    -fx-border-insets: 0 15 0 15;
+}
+
+
+#AuthenticationTitleLabel {
+    -fx-min-width: 340;
+    -fx-min-height: 50;
+    -fx-max-height: 50;
+    -fx-text-fill: rgba(52,73,94,0.7);
+    -fx-font: 20px "Decalotype Light";
+    -fx-alignment: center;
+}
+
+#AppHBox {
+    -fx-min-height: 50;
+    -fx-max-height: 50;
+    -fx-min-width: 60;
+    -fx-max-width: 60;
+    -fx-alignment: center;
+}
+
+.ClickableHBoxes {
+    -fx-min-height: 50;
+    -fx-max-height: 50;
+    -fx-min-width: 50;
+    -fx-max-width: 50;
+    -fx-alignment: center;
+    -fx-cursor: hand;
+}
+
+.ClickableHBoxes:hover {
+    -fx-background-color: rgba(255,255,255,0.15);
+    -fx-cursor: hand;
+}
+
+#MinimizeHBox {
+    -fx-background-color: rgba(0,0,0,0.05);
+}
+
+#ExitHBox {
+    -fx-background-color: rgba(0,0,0,0.15);
+}
+
+/* END OF TOP */
+
+
+/* CENTER */
+
+#LoginPane {
+    -fx-min-width: 400;
+    -fx-max-width: 400;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: rgba(255,255,255,0.2);
+    -fx-background-color: rgba(189,189,189,0.2);
+    -fx-border-radius: 1 1 1 1;
+    -fx-background-radius: 1 1 1 1;
+    -fx-min-height: 380;
+    -fx-max-height: 380;
+}
+
+#LoginHotKeysGridPane {
+    -fx-min-width: 400;
+    -fx-max-width: 400;
+    -fx-alignment: top-center;
+}
+
+#LoginHotKeysGridPane .label {
+    -fx-min-height: 40;
+    -fx-alignment: center;
+    -fx-text-fill: rgba(52,73,94,0.6);
+    -fx-font: 13px "Decalotype Medium";
+}
+
+#LoginDetailsPane {
+    -fx-min-width: 370;
+    -fx-max-width: 370;
+    -fx-padding: 20 10 10 0;
+}
+
+.DecoratedInputFields {
+    -fx-font-size: 18;
+    -fx-border-width: 0 0 0 0;
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+    -fx-max-height: inherit;
+    -fx-min-height: inherit;
+}
+
+.CustomFieldHBox {
+    -fx-border-width: 0 0 2 0;
+    -fx-min-height: 40;
+    -fx-max-height: 40;
+    -fx-alignment: center;
+    -fx-min-width: 250;
+    -fx-max-width: 250;
+    -fx-border-color: rgba(52,73,94,0.4);
+
+}
+
+/* END OF CENTER */
+
+/* LEFT */
+
+
+.LobbyMenuItem {
+    -fx-min-width: 70;
+    -fx-max-width: 70;
+    -fx-alignment: center;
+    -fx-spacing: 15;
+}
+
+.LobbyMenuItemLabel {
+    -fx-text-fill: rgba(255,255,255,0.6);
+    -fx-font: 13px "Decalotype Light";
+}
+
+.LobbyMenuItem:hover {
+    -fx-cursor: hand;
+    -fx-background-color: rgba(189,189,189,0.1);
+}
+/* END OF LEFT */
+
+/* BOTTOM */
+
+.LobbyBottomHBoxStyle {
+    -fx-min-height: 50;
+    -fx-max-height: 50;
+    -fx-background-color: rgba(44,62,80,0.2);
+    -fx-border-width: 1 0 0 0;
+    -fx-border-color: rgba(255,255,255,0.1);
+    -fx-alignment: center;
+    -fx-spacing: 25;
+
+}
+
+.LobbyBottomLabels {
+    -fx-min-height: 50;
+    -fx-min-width: 240;
+    -fx-alignment: center;
+    -fx-text-fill: rgba(255,255,255,0.7);
+    -fx-font: 15px "Decalotype Medium";
+}
+
+.LobbyBottomLabels:hover{
+    -fx-cursor: hand;
+    -fx-text-fill: #a8a8a8;
+}
+
+.LoginButtons {
+    -fx-max-height: 40;
+    -fx-min-height: 40;
+    -fx-min-width: 180;
+    -fx-background-color: rgba(0,0,0,0.10);
+    -fx-cursor: hand;
+    -fx-alignment: center;
+}
+
+#LoginBottomHBox {
+    -fx-min-height: 60;
+    -fx-border-color: #7A8085;
+    -fx-border-width: 1 0 0 0;
+    -fx-border-insets: 0 15 0 15;
+    -fx-alignment: center;
+    -fx-spacing: 15;
+}
+
+
+.LoginButtons:hover {
+    -fx-border-width: 0 0 2 0;
+    -fx-border-color: rgba(0,0,0,0.2);
+    -fx-cursor: hand;
+}
+
+.LoginLabels {
+    -fx-min-width: 130;
+    -fx-alignment: center;
+    -fx-min-height: 40;
+    -fx-text-fill: rgba(52,73,94,1);
+    -fx-font: 18px "Decalotype Thin";
+}
+
+/* END OF BOTTOM */
+
+/* HOVER PANE */
+
+
+#HoverPane {
+    -fx-min-width: 500;
+    -fx-max-width: 500;
+    -fx-min-height: 500;
+    -fx-max-height: 500;
+}
+#LoadingVBox {
+    -fx-min-height: 300;
+    -fx-max-height: 300;
+    -fx-min-width: 500;
+    -fx-max-width: 500;
+    -fx-spacing: 30;
+    -fx-alignment: center;
+}
+
+#LoadingVBox .label {
+    -fx-text-fill: rgba(52,73,94,0.8);
+    -fx-alignment: center;
+    -fx-font: 17px "Akrobat Regular";
+}
+
+#BackHBox {
+    -fx-spacing: 30;
+    -fx-min-height: 70;
+    -fx-min-width: 70;
+    -fx-background-insets: 10 10 10 10;
+    -fx-padding: 10 10 10 10;
+    -fx-alignment: center;
+    -fx-background-color: rgba(52,73,94,0.2);
+}
+
+#BackHBox .label {
+    -fx-text-fill: rgba(255,255,255,0.6);
+    -fx-alignment: center;
+    -fx-font: 17px "Akrobat Regular";
+}
+
+#BackHBox:hover {
+    -fx-border-width: 1 1 1 1;
+    -fx-border-insets: 10 10 10 10;
+    -fx-border-color: rgba(255,255,255,0.3);
+    -fx-cursor: hand;
+}
+
+
+/* END OF HOVER PANE */

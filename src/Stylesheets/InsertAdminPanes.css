@@ -1,0 +1,340 @@
+/* TOP */
+
+.AdministrationInsertPaginationTopHBoxes {
+    -fx-alignment: center;
+    -fx-min-height: 50; /* was 70 before */
+    -fx-font-size: 18;
+    -fx-background-color: rgba(0,0,0,0.10);
+}
+
+.AdministrationInsertPaginationTopHBoxes .label {
+    -fx-alignment: center-left;
+    -fx-padding: 0 0 0 20;
+    -fx-text-fill: rgba(255,255,255,0.7);
+    -fx-font:20px "Decalotype Light";
+    -fx-border-color: rgba(0,0,0,0.1);
+    -fx-border-width: 0 1 0 0;
+    -fx-border-insets: 5 15 5 0;
+    -fx-min-height: 50;
+}
+
+.PaginationArrowsHBox {
+    -fx-background-color: rgba(0,0,0,0.1);
+    -fx-alignment: center;
+    -fx-min-width: 50;
+    -fx-min-height: 50;
+    -fx-max-width: 50;
+    -fx-max-height: 50;
+}
+
+.PaginationIconHBoxes {
+    -fx-min-height: 50;
+    -fx-max-height: 50;
+    -fx-alignment: center;
+}
+
+.PaginationArrowsHBox:hover {
+    -fx-cursor: hand;
+    -fx-background-color: rgba(255,255,255,0.05);
+}
+
+/* END OF TOP */
+
+
+/* CENTER */
+
+.PaginationCenterPane {
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: rgba(255,255,255,0.2);
+    -fx-background-insets: 10 0 10 0;
+    -fx-border-insets: 10 0 10 0;
+}
+
+.InputTextFields {
+    -fx-min-height: 35;
+    -fx-pref-height: 70;
+    -fx-max-height: 70;
+    -fx-font-size: 18;
+    -fx-prompt-text-fill: #c6c6c6;
+    -fx-background:transparent;
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 10 0;
+    -fx-alignment: bottom-left;
+    -fx-text-fill: #f8f8f8;
+}
+
+#GenderHBox {
+    -fx-alignment: center;
+    -fx-spacing: 20;
+}
+
+.GenderVBoxStyle  {
+    -fx-min-width: 100;
+    -fx-min-height: 100;
+    -fx-alignment: center;
+    -fx-spacing: 10;
+    -fx-max-height: 100;
+    -fx-max-width: 100;
+}
+
+.GenderVBoxStyle .label {
+    -fx-text-fill: #f8f8f8;
+}
+
+.GenderVBoxStyle:hover {
+    -fx-cursor: hand;
+}
+
+.CenterHBoxes {
+    -fx-spacing: 20;
+    -fx-alignment: center-left;
+}
+
+.ConfirmationVBoxes .label {
+    -fx-font-size: 18;
+    -fx-text-fill: rgba(255,255,255,0.6);
+    -fx-min-height: 40;
+    -fx-alignment: center;
+}
+
+#ConfirmCheckBox {
+    -fx-min-height: 200;
+}
+
+.CenterHBoxes .label {
+    -fx-text-fill: #f8f8f8;
+    -fx-min-height: 50;
+    -fx-alignment: center-left;
+    -fx-font: 18px "Akrobat SemiBold";
+}
+
+.AdditionalInfoTextArea {
+    -fx-text-fill: #f8f8f8;
+    -fx-background-color: transparent;
+}
+
+.AdditionalInfoTextArea .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.AdditionalInfoTextArea .scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+
+
+.AdditionalInfoTextArea .scroll-pane .content{
+    -fx-background-color: transparent;
+}
+
+.PaginationCenterContentTopLabel {
+    -fx-text-fill: rgba(52,73,94,0.7);
+    -fx-font:20px "Decalotype Light";
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: rgba(52,73,94,0.4);
+    -fx-min-height: 60;
+    -fx-max-height: 60;
+    -fx-border-insets: 0 10 0 10;
+}
+
+#LicenseHBox {
+    -fx-min-height: 70;
+    -fx-alignment: center;
+    -fx-spacing: 30;
+}
+
+.DesignedSelectionButtons {
+    -fx-background-color: rgba(255,255,255,0.1);
+    -fx-border-width: 1 1 1 1;
+    -fx-border-radius: 2 2 2 2;
+    -fx-background-radius: 2 2 2 2;
+}
+
+.DesignedSelectionButtons:hover {
+    -fx-cursor: hand;
+}
+
+.CheckImageHBox {
+    -fx-max-width: 360;
+}
+
+.PrescriptionSelectionLabel {
+    -fx-text-fill: rgba(255,255,255,0.8);
+    -fx-font-size: 16;
+    -fx-text-alignment: center;
+}
+
+#PrescriptionChildrenHBox {
+    -fx-spacing: 20;
+    -fx-max-height: 50;
+    -fx-alignment: center;
+    -fx-pref-width: inherit;
+}
+
+.CustomBrowseListView {
+    -fx-background:transparent;
+    -fx-background-color: transparent;
+    -fx-alignment: center;
+    -fx-background-radius: 2 2 2 2;
+    -fx-border-radius: 2 2 2 2;
+    -fx-padding: 10 5 5 5;
+    -fx-background-insets: 0 20 20 20;
+    -fx-border-insets: 0 20 20 20;
+}
+
+.CustomBrowseListView .list-cell {
+    -fx-text-fill: rgba(255,255,255,0.6);
+    -fx-font: 20px "Akrobat Bold";
+    -fx-alignment: center;
+}
+
+.PlainTextLabel {
+    -fx-text-fill: rgba(189, 195, 199,0.8);
+    -fx-font: 20px "Akrobat Light";
+}
+
+.DefaultCheckBox .box{
+    -fx-background-color: transparent;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: rgba(0, 51, 102, 0.8);
+    -fx-background-radius: 2 2 2 2;
+    -fx-border-radius: 2 2 2 2;
+}
+
+.DefaultCheckBox:selected .mark {
+    -fx-background-color: rgba(0, 51, 102, 0.8);
+}
+
+.DefaultCheckBox {
+    -fx-font: 17px  "Akrobat Bold";
+    -fx-text-fill: rgba(207, 0, 15,0.7);
+}
+
+.CountryCodeComboBoxStyle {
+    -fx-background-color: transparent;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-radius: 2 2 2 2;
+    -fx-border-color: rgba(0, 51, 102, 0.8);
+    -fx-background-radius: 2 2 2 2 ;
+}
+
+.CountryCodeComboBoxStyle .list-cell {
+    -fx-background-color: transparent;
+    -fx-background:transparent;
+}
+
+.CountryCodeComboBoxStyle .list-view {
+    -fx-background-color: transparent;
+    -fx-background:transparent;
+    -fx-border-color: rgba(0, 51, 102, 0.8);
+    -fx-border-width: 1 1 1 1;
+}
+
+.CountryCodeComboBoxStyle .list-cell:hover {
+    -fx-opacity: 0.8;
+    -fx-cursor: hand;
+}
+
+.PhoneNumberFieldStyle {
+    -fx-background:transparent;
+    -fx-background-color: transparent;
+    -fx-text-fill: #f8f8f8;
+    -fx-alignment: bottom-left;
+    -fx-prompt-text-fill: #c6c6c6;
+    -fx-padding: 0 0 5 0;
+    -fx-font-size: 17;
+}
+
+#BrowseListView .list-cell:odd, .list-cell:even,
+.scroll-bar:vertical .increment-button , .scroll-bar:vertical .decrement-button{
+    -fx-background-color: transparent;
+}
+
+#BrowseListView .scroll-bar:horizontal .increment-arrow,
+.scroll-bar:horizontal .decrement-arrow,
+.scroll-bar:horizontal .increment-button,
+.scroll-bar:horizontal .decrement-button {
+    -fx-padding: 0;
+}
+
+.DefaultBrowseListView .thumb {
+    -fx-background-color: rgba(0, 51, 102, 0.8);
+}
+
+.DefaultBrowseListView .list-cell:odd, .list-cell:even, .scroll-bar{
+    -fx-background-color: transparent;
+}
+
+#BrowseListView .scroll-bar:vertical .increment-arrow , #BrowseListView .scroll-bar:vertical .decrement-arrow {
+    -fx-background-color: rgba(0,51,102,0.8);
+}
+
+#BrowseListView .list-cell:selected {
+    -fx-background-color: rgba(0,0,0,0.10);
+    -fx-padding: 0 0 0 30;
+    -fx-font: 25px "Akrobat Bold";
+}
+
+.TerminalTopGridPaneStyle {
+    -fx-min-height: 60;
+    -fx-max-height: 60;
+    -fx-alignment: center;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-insets: 0 10 0 10;
+    -fx-border-color: rgba(52,73,94,0.4);
+}
+
+.TerminalTopGridPaneStyle .label {
+    -fx-text-fill: rgba(52,73,94,0.7);
+    -fx-font:20px "Decalotype Light";
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: rgba(52,73,94,0.4);
+    -fx-min-height: 60;
+    -fx-max-height: 60;
+}
+
+.TerminalScrollPane {
+    -fx-background-insets: 20 25 20 25;
+    -fx-padding: 10 10 0 10;
+    -fx-background:transparent;
+    -fx-background-color: transparent;
+}
+
+.SynchronizationLabels {
+    -fx-font:25px "Akrobat Light";
+    -fx-text-fill: rgba(52,73,94,0.7);
+    -fx-alignment: center;
+    -fx-min-height: 80;
+    -fx-max-height: 80;
+}
+
+.MedicineTypeTiles:hover {
+    -fx-cursor: hand;
+}
+
+.TileLabels {
+    -fx-text-fill:rgba(255,255,255,0.7);
+    -fx-font: 18px "Decalotype Thin";
+    -fx-background-color: rgba(0,0,0,0.10);
+    -fx-min-width: 170;
+    -fx-alignment: center;
+    -fx-min-height: 35;
+}
+
+/* END OF CENTER */
+
+/* BOTTOM */
+
+.CustomPaginationStyle {
+    -fx-arrows-visible: false;
+    -fx-tooltip-visible: false;
+    -fx-page-information-visible:false;
+}
+
+.CustomPaginationStyle .pagination-control {
+    -fx-background-color: rgba(0,0,0,0.10);
+    -fx-min-height: 50;
+    -fx-max-height: 50;
+    -fx-padding: 0 0 5 0;
+}
+
+/* END OF BOTTOM */

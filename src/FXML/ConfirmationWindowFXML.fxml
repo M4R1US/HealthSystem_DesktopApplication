@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.TextFlow?>
+
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.Pane?>
+<BorderPane fx:id="ConfirmationWindowRootPane" stylesheets="@/Stylesheets/ConfirmationWindowStyle.css" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ConfirmationWindowController">
+    <top>
+        <Pane minHeight="50"></Pane>
+    </top>
+    <center>
+        <TextFlow fx:id="InformationTextFlow" minHeight="70" textAlignment="CENTER">
+
+        </TextFlow>
+    </center>
+    <bottom>
+    <GridPane>
+        <columnConstraints>
+            <ColumnConstraints percentWidth="50" halignment="CENTER"/>
+            <ColumnConstraints percentWidth="50" halignment="CENTER"/>
+        </columnConstraints>
+        <Button fx:id="YesButton" styleClass="ConfirmButtons" GridPane.columnIndex="0" text="Yes">
+            <graphic>
+                <ImageView fitWidth="24" fitHeight="24">
+                    <Image url="@/Icons/x64/confirm.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button fx:id="NoButton" styleClass="ConfirmButtons" GridPane.columnIndex="1" text="No">
+            <graphic>
+                <ImageView fitWidth="20" fitHeight="20">
+                    <Image url="@/Icons/x64/disconfirm.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+    </GridPane>
+    </bottom>
+</BorderPane>

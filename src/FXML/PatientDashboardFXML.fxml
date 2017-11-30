@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import CustomControls.DigitalClock?>
+<?import javafx.scene.control.CustomMenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane fx:id="BaseStackPane" stylesheets="@/Stylesheets/OtherDashboards.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PatientDashboardController">
+    <BorderPane fx:id="RootPane">
+        <top>
+            <GridPane fx:id="TopGridPane">
+                <columnConstraints>
+                    <ColumnConstraints halignment="CENTER" minWidth="50" />
+                    <ColumnConstraints halignment="CENTER" minWidth="50" />
+                    <ColumnConstraints minWidth="465"/>
+                    <ColumnConstraints minWidth="165" />
+                    <ColumnConstraints minWidth="230"/>
+                    <ColumnConstraints halignment="CENTER" minWidth="50" />
+                </columnConstraints>
+
+                <rowConstraints>
+                    <RowConstraints minHeight="50" maxHeight="50" valignment="CENTER" />
+                </rowConstraints>
+
+                <HBox alignment="CENTER" fx:id="AppIconHBox" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <MenuButton fx:id="SceneActionMenuButton" popupSide="BOTTOM">
+                        <graphic>
+                            <ImageView fitHeight="24" fitWidth="24">
+                                <Image url="@/Icons/x64/monitor.png"/>
+                            </ImageView>
+                        </graphic>
+                        <items>
+                            <CustomMenuItem>
+                                <content>
+                                    <HBox fx:id="HomeHBox" styleClass="SelectIconsHBoxes">
+                                        <ImageView fitHeight="24" fitWidth="24">
+                                            <Image url="@/Icons/x64/home.png" />
+                                        </ImageView>
+                                    </HBox>
+                                </content>
+                            </CustomMenuItem>
+                            <CustomMenuItem>
+                                <content>
+                                    <HBox fx:id="MinimizeHBox" styleClass="SelectIconsHBoxes">
+                                        <ImageView fitHeight="24" fitWidth="24">
+                                            <Image url="@/Icons/x64/minimize_marked.png" />
+                                        </ImageView>
+                                    </HBox>
+                                </content>
+                            </CustomMenuItem>
+                            <CustomMenuItem>
+                                <content>
+                                    <HBox fx:id="MaximizeHBox" styleClass="SelectIconsHBoxes">
+                                        <ImageView fitHeight="24" fitWidth="24">
+                                            <Image url="@/Icons/x64/maximize.png" />
+                                        </ImageView>
+                                    </HBox>
+                                </content>
+                            </CustomMenuItem>
+                            <CustomMenuItem>
+                                <content>
+                                    <HBox fx:id="LogoutHBox" styleClass="SelectIconsHBoxes">
+                                        <ImageView fitHeight="24" fitWidth="24">
+                                            <Image url="@/Icons/x64/logout.png" />
+                                        </ImageView>
+                                    </HBox>
+                                </content>
+                            </CustomMenuItem>
+                            <CustomMenuItem>
+                                <content>
+                                    <HBox fx:id="ExitHBox" styleClass="SelectIconsHBoxes">
+                                        <ImageView fitHeight="24" fitWidth="24">
+                                            <Image url="@/Icons/x64/exit.png" />
+                                        </ImageView>
+                                    </HBox>
+                                </content>
+                            </CustomMenuItem>
+                        </items>
+                    </MenuButton>
+                </HBox>
+
+                <HBox fx:id="ActionHBox" GridPane.columnIndex="1">
+                    <ImageView fitHeight="24" fitWidth="24" pickOnBounds="true">
+                        <Image url="@/Icons/x64/action.png"/>
+                    </ImageView>
+                </HBox>
+                <HBox fx:id="UserTitleHBox" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                    <Label fx:id="DashboardTitleLabel" text="Patient Dashboard"/>
+                </HBox>
+
+                <DigitalClock fx:id="DigitalClockLabel" GridPane.columnIndex="3"/>
+
+                <HBox fx:id="AccountHBox" GridPane.columnIndex="4">
+                    <Circle fx:id="ProfileImageCircle" radius="18" />
+                    <Label fx:id="DashboardTitleUserLabel" text="Undefined" />
+                </HBox>
+
+
+                <HBox fx:id="SettingsButtonHBox" alignment="CENTER" GridPane.columnIndex="5">
+                    <ImageView fx:id="SettingsIcon" styleClass="HoverIcons" pickOnBounds="true" fitHeight="24" fitWidth="24">
+                        <Image url="@/Icons/x64/settings.png" />
+                    </ImageView>
+                </HBox>
+            </GridPane>
+        </top>
+
+
+        <bottom>
+            <HBox fx:id="DashboardBottom">
+                <Label fx:id="MainPageLabel" styleClass="BottomLabels" text="© Health-System.eu 2017" />
+                <Label fx:id="SourceLabel" styleClass="BottomLabels" text="Developers: Marius Baltramaitis">
+                    <graphic>
+                        <ImageView fitHeight="24" fitWidth="24">
+                            <Image url="@/Icons/DefaultProfileIcons/github.png"/>
+                        </ImageView>
+                    </graphic>
+                </Label>
+            </HBox>
+        </bottom>
+    </BorderPane>
+    <BorderPane fx:id="DisablePane" styleClass="TransparentPaneStyle" visible="false">
+        <center>
+            <VBox styleClass="TransparentVBoxStyle">
+                <Label styleClass="FrontLabel" text="Access Denied!">
+                    <graphic>
+                        <ImageView fitHeight="64" fitWidth="64">
+                            <Image url="@/Icons/x64/denied.png"/>
+                        </ImageView>
+                    </graphic>
+                </Label>
+                <Label styleClass="FollowingUpLabel" text="You probably deserved it, didn't You?"/>
+            </VBox>
+        </center>
+    </BorderPane>
+    <BorderPane fx:id="ConnectionErrorPane" styleClass="TransparentPaneStyle" visible="false">
+        <center>
+            <VBox styleClass="TransparentVBoxStyle">
+                <Label styleClass="FrontLabel" text="Connection dismissed!">
+                    <graphic>
+                        <ImageView fitHeight="64" fitWidth="64">
+                            <Image url="@/Icons/x64/disconnected.png"/>
+                        </ImageView>
+                    </graphic>
+                </Label>
+                <Label styleClass="FollowingUpLabel" text="Don't worry, server is probably rebooting"/>
+                <Label styleClass="FollowingUpLabel" text="Reconnecting in :"/>
+                <Label fx:id="ReconnectionTimerLabel" styleClass="FollowingUpLabel"/>
+            </VBox>
+        </center>
+    </BorderPane>
+    <GridPane fx:id="ActionGridPane" visible="false">
+        <rowConstraints>
+            <RowConstraints minHeight="70" maxHeight="70"/>
+            <RowConstraints minHeight="200" maxHeight="200" valignment="TOP"/>
+            <RowConstraints minHeight="200" maxHeight="200" valignment="TOP"/>
+        </rowConstraints>
+        <columnConstraints>
+            <ColumnConstraints minWidth="100" maxWidth="100"/>
+            <ColumnConstraints minWidth="400" maxWidth="400" halignment="CENTER"/>
+            <ColumnConstraints minWidth="400" maxWidth="400" halignment="CENTER"/>
+            <ColumnConstraints minWidth="100" maxWidth="100"/>
+        </columnConstraints>
+        <HBox fx:id="SelectLabelHBox" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="0">
+            <Label fx:id="SelectLabel" text="SELECT NEXT ACTION     [CONTROL BUTTON TO CLOSE/OPEN THIS SECTION]"/>
+            <ImageView fx:id="DownArrow" fitHeight="32" fitWidth="32" pickOnBounds="true">
+                <Image url="@/Icons/x64/exit.png"/>
+            </ImageView>
+        </HBox>
+        <VBox styleClass="ActionVBoxStyle" GridPane.rowIndex="1" GridPane.columnIndex="1">
+            <ImageView styleClass="ActionIcons" fitWidth="64" fitHeight="64">
+                <Image url="@/Icons/x64/prescription_marked.png"/>
+            </ImageView>
+            <Label fx:id="PrescriptionArchiveLabel" styleClass="ActionPaneClickableLabels" text="Prescription archive"/>
+        </VBox>
+        <VBox styleClass="ActionVBoxStyle" GridPane.rowIndex="1" GridPane.columnIndex="2">
+            <ImageView styleClass="ActionIcons" fitWidth="64" fitHeight="64">
+                <Image url="@/Icons/x64/medicine_grey.png"/>
+            </ImageView>
+            <Label fx:id="MedicineLookupLabel" styleClass="ActionPaneClickableLabels" text="Medicine lookup"/>
+        </VBox>
+    </GridPane>
+</StackPane>

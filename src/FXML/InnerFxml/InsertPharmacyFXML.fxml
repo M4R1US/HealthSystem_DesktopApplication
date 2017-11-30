@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.BorderPane?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.text.TextFlow?>
+
+<BorderPane fx:id="InsertPharmacyRootPane" styleClass="AdminDashboardDefaultCenterPane" stylesheets="@/Stylesheets/InsertAdminPanes.css" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.InsideControllers.InsertPharmacyController">
+    <top>
+        <HBox fx:id="PaginationTopHBox" styleClass="AdministrationInsertPaginationTopHBoxes">
+            <HBox fx:id="LeftArrowHBox" styleClass="PaginationArrowsHBox">
+                <ImageView fx:id="LeftIcon" fitHeight="24" fitWidth="24" pickOnBounds="true" styleClass="PaginationArrows">
+                    <Image url="@/Icons/x64/left_colored.png"/>
+                </ImageView>
+            </HBox>
+            <Label fx:id="PersonalInfoTitleLabel" text="Pharmacy registration"/>
+            <HBox alignment="CENTER" spacing="20">
+                <HBox styleClass="PaginationIconHBoxes">
+                    <ImageView fitWidth="25" fitHeight="25">
+                        <Image url="@/Icons/x64/fill_form.png"/>
+                    </ImageView>
+                </HBox>
+                <HBox styleClass="PaginationIconHBoxes">
+                    <ImageView fitWidth="25" fitHeight="25">
+                        <Image url="@/Icons/x64/smartphone.png"/>
+                    </ImageView>
+                </HBox>
+                <HBox styleClass="PaginationIconHBoxes">
+                    <ImageView fitWidth="25" fitHeight="25">
+                        <Image url="@/Icons/x64/confirm.png"/>
+                    </ImageView>
+                </HBox>
+                <HBox styleClass="PaginationIconHBoxes">
+                    <ImageView fitWidth="25" fitHeight="25">
+                        <Image url="@/Icons/x64/terminal.png"/>
+                    </ImageView>
+                </HBox>
+                <HBox.margin>
+                    <Insets right="20"/>
+                </HBox.margin>
+            </HBox>
+            <HBox fx:id="RightArrowHBox" styleClass="PaginationArrowsHBox">
+                <ImageView fx:id="RightIcon" fitHeight="24" fitWidth="24" pickOnBounds="true" styleClass="PaginationArrows">
+                    <Image url="@/Icons/x64/right_colored.png"/>
+                </ImageView>
+            </HBox>
+        </HBox>
+    </top>
+    <center>
+        <BorderPane fx:id="PharmacyDetailsPane" styleClass="PaginationCenterPane">
+            <top>
+                <Label fx:id="PharmacyDetailsTopLabel" styleClass="PaginationCenterContentTopLabel" text="Name, address and additional information"/>
+            </top>
+            <center>
+                <GridPane fx:id="PharmacyDetailsInputPane">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="5" halignment="CENTER"/>
+                        <ColumnConstraints percentWidth="40" halignment="CENTER"/>
+                        <ColumnConstraints percentWidth="5" halignment="CENTER"/>
+                        <ColumnConstraints percentWidth="45" halignment="CENTER"/>
+                        <ColumnConstraints percentWidth="5" halignment="CENTER"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints percentHeight="5" valignment="CENTER"/>
+                        <RowConstraints percentHeight="15" valignment="CENTER"/>
+                        <RowConstraints percentHeight="2.5" valignment="CENTER"/>
+                        <RowConstraints percentHeight="15" valignment="CENTER"/>
+                        <RowConstraints percentHeight="2.5" valignment="CENTER"/>
+                        <RowConstraints percentHeight="50" valignment="CENTER"/>
+                        <RowConstraints percentHeight="5" valignment="CENTER"/>
+                    </rowConstraints>
+                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="NameField" styleClass="InputTextFields" promptText="Pharmacy name"/>
+                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="AddressField" styleClass="InputTextFields" promptText="Pharmacy address"/>
+                    <TextArea GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.rowSpan="5" fx:id="AdditionalInfoTextArea" styleClass="AdditionalInfoTextArea" wrapText="true" promptText="Additional information. Would be nice without swearing. Max 200 symbols"/>
+                </GridPane>
+            </center>
+        </BorderPane>
+        <BorderPane fx:id="PhoneNumberPane" styleClass="PaginationCenterPane" visible="false">
+            <top>
+                <Label fx:id="SmsPaneTopLabel" styleClass="PaginationCenterContentTopLabel" text="Delivery of authentication credentials"/>
+            </top>
+            <center>
+                <VBox alignment="CENTER" spacing="20">
+                    <ImageView fitHeight="64" fitWidth="64">
+                        <Image url="@/Icons/x64/exclamation_mark.png"/>
+                    </ImageView>
+                    <Label styleClass="PlainTextLabel" text="Phone numbers will not be registered inside database due security reasons and testing purposes"/>
+                    <Label styleClass="PlainTextLabel" graphicTextGap="15" text="Authentication credentials will be visible later on screen unless you choose to deliver via sms">
+                    </Label>
+                    <CheckBox styleClass="DefaultCheckBox" fx:id="SmsDeliverCheckBox" text="Deliver authentication credentials via SMS"/>
+                    <HBox spacing="10" alignment="CENTER">
+                        <ComboBox fx:id="CountryComboBox" styleClass="CountryCodeComboBoxStyle" disable="true"/>
+                        <TextField fx:id="PhoneNumberField" styleClass="PhoneNumberFieldStyle" disable="true" promptText="8 digits"/>
+                    </HBox>
+                </VBox>
+            </center>
+        </BorderPane>
+        <BorderPane fx:id="ConfirmationPane" styleClass="PaginationCenterPane" visible="false">
+            <top>
+                <Label fx:id="PreviewLabel" styleClass="PaginationCenterContentTopLabel" text="Review and confirm doctor details"/>
+            </top>
+            <center>
+                <GridPane fx:id="CenterInfoGridPane" alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="3.3333"/>
+                        <ColumnConstraints percentWidth="40" halignment="LEFT"/>
+                        <ColumnConstraints percentWidth="3.3333"/>
+                        <ColumnConstraints percentWidth="40" halignment="CENTER"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints percentHeight="10"/>
+                        <RowConstraints percentHeight="80"/>
+                        <RowConstraints percentHeight="10"/>
+                    </rowConstraints>
+                    <BorderPane GridPane.rowIndex="1" GridPane.columnIndex="1">
+                        <center>
+                            <VBox spacing="20">
+                                <HBox styleClass="CenterHBoxes">
+                                    <ImageView fitHeight="32" fitWidth="32">
+                                        <Image url="@/Icons/x32/pharmacy_white.png"/>
+                                    </ImageView>
+                                    <Label fx:id="PharmacyDetailsLabel" text="Pharmacy Name"/>
+                                </HBox>
+                                <HBox styleClass="CenterHBoxes">
+                                    <ImageView fitHeight="32" fitWidth="32">
+                                        <Image url="@/Icons/x64/house.png"/>
+                                    </ImageView>
+                                    <Label fx:id="AddressLabel" text="Address"/>
+                                </HBox>
+                                <HBox styleClass="CenterHBoxes">
+                                    <ImageView fitHeight="30" fitWidth="30">
+                                        <Image url="@/Icons/x64/keys.png"/>
+                                    </ImageView>
+                                    <Label fx:id="LoginDetailsLabel" text="Login details will be visible on screen after uploading data to database"/>
+                                </HBox>
+                            </VBox>
+                        </center>
+                    </BorderPane>
+                    <BorderPane GridPane.columnIndex="3" GridPane.rowIndex="1">
+                        <center>
+                            <VBox styleClass="ConfirmationVBoxes" alignment="TOP_CENTER" spacing="20">
+                                <Label fx:id="ConfirmationLabel" text="Click on me to confirm details on the left side"/>
+                                <CheckBox fx:id="ConfirmCheckBox" styleClass="DefaultCheckBox"/>
+                            </VBox>
+                        </center>
+                    </BorderPane>
+                </GridPane>
+            </center>
+        </BorderPane>
+        <BorderPane fx:id="TerminalPane" styleClass="PaginationCenterPane" visible="false">
+            <top>
+                <GridPane styleClass="TerminalTopGridPaneStyle">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="90" halignment="CENTER"/>
+                        <ColumnConstraints percentWidth="10" halignment="RIGHT"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints percentHeight="100" valignment="CENTER"/>
+                    </rowConstraints>
+                    <Label fx:id="TerminalTopLabel" GridPane.rowIndex="0" GridPane.columnIndex="0"  text="Transaction interface"/>
+                    <Label fx:id="ProgressLabel" GridPane.rowIndex="0" GridPane.columnIndex="1" text="0 %"/>
+                </GridPane>
+            </top>
+            <center>
+                <VBox fx:id="TerminalPaneCenterVBox" alignment="CENTER">
+                    <ScrollPane fx:id="TerminalScrollPane" styleClass="TerminalScrollPane">
+                        <TextFlow fx:id="Terminal"/>
+                    </ScrollPane>
+                </VBox>
+            </center>
+        </BorderPane>
+        <Pagination fx:id="CustomPagination" styleClass="CustomPaginationStyle" maxPageIndicatorCount="4" pageCount="4"/>
+    </center>
+</BorderPane>

@@ -1,0 +1,183 @@
+
+
+#ImageClipBoardPane {
+    -fx-background-color: rgb(44,62,80);
+    -fx-min-height: 650;
+    -fx-max-height: 650;
+    -fx-min-width: 1200;
+    -fx-max-width: 1200;
+}
+/* TOP */
+
+#ToolBarPane {
+    -fx-min-height: 60;
+    -fx-max-height: 60;
+    -fx-background-color: rgba(0,0,0,0.2);
+
+}
+
+#AngleLabel {
+    -fx-text-fill: rgba(255,255,255,0.7);
+    -fx-font-size: 16;
+    -fx-font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.CoordinatesLabel {
+    -fx-text-fill: rgba(255,255,255,0.7);
+    -fx-font-size: 15;
+    -fx-font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.TopHBoxes {
+    -fx-min-height: 60;
+    -fx-max-height: 60;
+    -fx-min-width: 200;
+    -fx-max-width: 200;
+    -fx-alignment: center;
+    -fx-spacing: 10;
+}
+
+.TopHBoxes:hover {
+    -fx-border-width: 1 1 1 1;
+    -fx-border-radius: 2 2 2 2;
+    -fx-border-color: #a8a8a8;
+    -fx-border-insets: 5 5 5 5;
+    -fx-cursor: hand;
+}
+
+.TopLabels {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16;
+    -fx-min-height: 60;
+    -fx-font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* Center */
+
+#ImagePane {
+    -fx-min-height: 570;
+    -fx-max-height: 570;
+    -fx-min-width: 1000;
+    -fx-max-width: 1000;
+    -fx-alignment: center;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: rgba(255,255,255,0.15);
+}
+
+#CenterStackPane {
+    -fx-min-height: 570;
+    -fx-max-height: 570;
+    -fx-min-width: 1000;
+    -fx-max-width: 1000;
+
+}
+
+#SwitchHBox {
+    -fx-min-height: 50;
+    -fx-max-height: 50;
+    -fx-min-width: 80;
+    -fx-max-width: 80;
+    -fx-alignment: center;
+    -fx-spacing: 10;
+    -fx-background-color: rgba(0,0,0,0.2);
+    -fx-background-radius: 20 20 20 20;
+
+}
+
+#RectAnglePane {
+    -fx-min-height: 160;
+    -fx-min-width: 160;
+}
+
+#SwitchPane {
+    -fx-min-height: 50;
+    -fx-max-height: 50;
+    -fx-min-width: 80;
+    -fx-max-width: 80;
+    -fx-background-color: rgba(0,0,0,0.2);
+    -fx-alignment: center;
+}
+
+.ScrollImages:hover {
+    -fx-cursor: hand;
+    -fx-opacity: 0.7;
+}
+
+/* Right  */
+#AsideMenuVBox {
+    -fx-spacing: 15;
+    -fx-alignment: center;
+}
+
+.AsideMenuPanes {
+    -fx-min-width: 162;
+    -fx-max-width: 162;
+    -fx-background-color: rgba(0,0,0,0.2);
+    -fx-min-height: 40;
+    -fx-alignment: center;
+}
+
+.AsideMenuPanes:hover{
+    -fx-cursor: hand;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: rgba(255,255,155,0.15);
+}
+
+.AsideMenuLabels {
+    -fx-font-family: "Lucida Console", Monaco, monospace;
+    -fx-text-fill: #f8f8f8;
+    -fx-font-size: 15;
+    -fx-font-weight:bold;
+}
+#SensitiveInformationLabel {
+    -fx-font-family: "Lucida Console", Monaco, monospace;
+    -fx-font-size: 16;
+    -fx-font-weight:bold;
+    -fx-text-fill: rgb(240,50,0);
+    -fx-min-width: 180;
+    -fx-max-width: 180;
+    -fx-alignment: center;
+    -fx-min-height: 50;
+}
+
+
+#RightPane {
+    -fx-alignment: top-center;
+    -fx-min-width: 190;
+    -fx-max-width: 190;
+    -fx-padding: 5 0 0 0;
+
+}
+
+
+#CapturedImage {
+    -fx-opacity: 1;
+}
+
+#CapturedImageHBox {
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: rgba(255,255,255,0.15);;
+    -fx-min-height: 162;
+    -fx-max-height: 162;
+    -fx-min-width: 162;
+    -fx-max-width: 162;
+    -fx-alignment: center;
+}
+
+/* Bottom */
+#BottomPane {
+    -fx-min-height: 60;
+    -fx-max-height: 60;
+    -fx-background-color: rgba(0,0,0,0.2);
+    -fx-alignment: center;
+}
+
+.BottomLabels {
+    -fx-text-fill: #f8f8f8;
+    -fx-alignment: center;
+    -fx-font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+#CopyrightLabel {
+    -fx-padding: 0 0 0 15;
+}

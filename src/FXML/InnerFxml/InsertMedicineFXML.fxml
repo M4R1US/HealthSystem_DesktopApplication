@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.BorderPane?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.geometry.Insets?>
+
+
+<?import Animations2D.SynchronizationAnimation?>
+<BorderPane fx:id="InsertMedicineRootPane" styleClass="AdminDashboardDefaultCenterPane" stylesheets="@/Stylesheets/InsertAdminPanes.css" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.InsideControllers.InsertMedicineController">
+    <top>
+        <HBox fx:id="PaginationTopHBox" styleClass="AdministrationInsertPaginationTopHBoxes">
+            <HBox fx:id="LeftArrowHBox" styleClass="PaginationArrowsHBox">
+                <ImageView fx:id="LeftIcon" fitHeight="24" fitWidth="24" pickOnBounds="true" styleClass="PaginationArrows">
+                    <Image url="@/Icons/x64/left_colored.png"/>
+                </ImageView>
+            </HBox>
+            <Label fx:id="PersonalInfoTitleLabel" text="Medicine registration"/>
+            <HBox alignment="CENTER" spacing="20">
+                <HBox styleClass="PaginationIconHBoxes">
+                    <ImageView fitWidth="24" fitHeight="24">
+                        <Image url="@/Icons/x64/license.png"/>
+                    </ImageView>
+                </HBox>
+                <HBox styleClass="PaginationIconHBoxes">
+                    <ImageView fitWidth="24" fitHeight="24">
+                        <Image url="@/Icons/x64/2-pills.png"/>
+                    </ImageView>
+                </HBox>
+                <HBox styleClass="PaginationIconHBoxes">
+                    <ImageView fitWidth="24" fitHeight="24">
+                        <Image url="@/Icons/x64/fill_form.png"/>
+                    </ImageView>
+                </HBox>
+                <HBox styleClass="PaginationIconHBoxes">
+                    <ImageView fitWidth="24" fitHeight="24">
+                        <Image url="@/Icons/x64/confirm.png"/>
+                    </ImageView>
+                </HBox>
+                <HBox styleClass="PaginationIconHBoxes">
+                    <ImageView fitWidth="24" fitHeight="24">
+                        <Image url="@/Icons/x64/synchronization.png"/>
+                    </ImageView>
+                </HBox>
+                <HBox.margin>
+                    <Insets right="20"/>
+                </HBox.margin>
+            </HBox>
+            <HBox fx:id="RightArrowHBox" styleClass="PaginationArrowsHBox">
+                <ImageView fx:id="RightIcon" fitWidth="24" fitHeight="24" pickOnBounds="true" styleClass="PaginationArrows">
+                    <Image url="@/Icons/x64/right_colored.png"/>
+                </ImageView>
+            </HBox>
+        </HBox>
+    </top>
+    <center>
+        <BorderPane fx:id="MedicineDetailsPane" styleClass="PaginationCenterPane">
+            <top>
+                <Label fx:id="MedicineDescriptionLabel" styleClass="PaginationCenterContentTopLabel" text="Name, description and license"/>
+            </top>
+            <center>
+                <GridPane fx:id="MedicineDetailsInputPane">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="5" halignment="CENTER"/>
+                        <ColumnConstraints percentWidth="40" halignment="CENTER"/>
+                        <ColumnConstraints percentWidth="5" halignment="CENTER"/>
+                        <ColumnConstraints percentWidth="45" halignment="CENTER"/>
+                        <ColumnConstraints percentWidth="5" halignment="CENTER"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints percentHeight="5" valignment="CENTER"/>
+                        <RowConstraints percentHeight="15" valignment="CENTER"/>
+                        <RowConstraints percentHeight="10" valignment="CENTER"/>
+                        <RowConstraints percentHeight="60" valignment="CENTER"/>
+                    </rowConstraints>
+
+                    <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="MedicineNameField" styleClass="InputTextFields" promptText="Medicine name"/>
+                    <TextArea GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="DescriptionInfoTextArea" styleClass="AdditionalInfoTextArea" wrapText="true" promptText="Description of medicine. Max 200 symbols"/>
+                    <VBox maxWidth="300"  spacing="20" alignment="TOP_CENTER" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.rowSpan="4">
+                        <GridPane fx:id="A_PrescriptionsPane" styleClass="DesignedSelectionButtons">
+                            <columnConstraints>
+                                <ColumnConstraints minWidth="60" maxWidth="60" halignment="CENTER"/>
+                                <ColumnConstraints minWidth="300" maxWidth="300" halignment="CENTER"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="50" valignment="CENTER"/>
+                            </rowConstraints>
+                            <HBox fx:id="A_Prescriptions_CheckHBox" styleClass="CheckImageHBox" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                <ImageView fx:id="A_PrescriptionsCheckImage" visible="false" fitWidth="24" fitHeight="24">
+                                    <Image url="@/Icons/x64/checked.png"/>
+                                </ImageView>
+                            </HBox>
+                            <Label styleClass="PrescriptionSelectionLabel" text="License for strong prescriptions [A]" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        </GridPane>
+                        <GridPane fx:id="B_PrescriptionsPane" styleClass="DesignedSelectionButtons">
+                            <columnConstraints>
+                                <ColumnConstraints minWidth="60" maxWidth="60" halignment="CENTER"/>
+                                <ColumnConstraints minWidth="300" maxWidth="300" halignment="CENTER"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="50" valignment="CENTER"/>
+                            </rowConstraints>
+                            <HBox fx:id="B_Prescriptions_CheckHBox" styleClass="CheckImageHBox" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                <ImageView fx:id="B_PrescriptionsCheckImage" visible="false" fitWidth="24" fitHeight="24">
+                                    <Image url="@/Icons/x64/checked.png"/>
+                                </ImageView>
+                            </HBox>
+                            <Label styleClass="PrescriptionSelectionLabel" text="License for weaker prescriptions [B]" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        </GridPane>
+                    </VBox>
+                </GridPane>
+            </center>
+        </BorderPane>
+        <GridPane alignment="CENTER" fx:id="MedicineTypeNamePane" visible="false">
+            <columnConstraints>
+                <ColumnConstraints minWidth="170" maxWidth="170" halignment="CENTER"/>
+                <ColumnConstraints minWidth="25" maxWidth="25" halignment="CENTER"/>
+                <ColumnConstraints minWidth="170" maxWidth="170" halignment="CENTER"/>
+                <ColumnConstraints minWidth="25" maxWidth="25" halignment="CENTER"/>
+                <ColumnConstraints minWidth="170" maxWidth="170" halignment="CENTER"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="170" maxHeight="170" valignment="CENTER"/>
+                <RowConstraints minHeight="25" maxHeight="25" valignment="CENTER"/>
+                <RowConstraints minHeight="170" maxHeight="170" valignment="CENTER"/>
+            </rowConstraints>
+            <BorderPane fx:id="TabletPane" styleClass="MedicineTypeTiles" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <center>
+                    <ImageView fx:id="TabletImageView" fitWidth="50" fitHeight="50">
+                        <Image url="@/Icons/x64/2-pills_marked.png"/>
+                    </ImageView>
+                </center>
+                <bottom>
+                    <Label text="Tablet" styleClass="TileLabels"/>
+                </bottom>
+            </BorderPane>
+            <BorderPane fx:id="CapsulePane" styleClass="MedicineTypeTiles" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                <center>
+                    <ImageView fx:id="CapsuleImageView" fitWidth="50" fitHeight="50">
+                        <Image url="@/Icons/x64/pill-capsule_marked.png"/>
+                    </ImageView>
+                </center>
+                <bottom>
+                    <Label text="Capsule" styleClass="TileLabels"/>
+                </bottom>
+            </BorderPane>
+            <BorderPane fx:id="PowderPane" styleClass="MedicineTypeTiles" GridPane.columnIndex="4" GridPane.rowIndex="0">
+                <center>
+                    <ImageView fx:id="PowderImageView" fitWidth="50" fitHeight="50">
+                        <Image url="@/Icons/x64/powder_marked.png"/>
+                    </ImageView>
+                </center>
+                <bottom>
+                    <Label text="Powder" styleClass="TileLabels"/>
+                </bottom>
+            </BorderPane>
+            <BorderPane fx:id="LotionPane" styleClass="MedicineTypeTiles" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                <center>
+                    <ImageView fx:id="LotionImageView" fitWidth="50" fitHeight="50">
+                        <Image url="@/Icons/x64/lotion_marked.png"/>
+                    </ImageView>
+                </center>
+                <bottom>
+                    <Label text="Lotion" styleClass="TileLabels"/>
+                </bottom>
+            </BorderPane>
+            <BorderPane fx:id="DropsPane" styleClass="MedicineTypeTiles" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                <center>
+                    <ImageView fx:id="DropsImageView" fitWidth="50" fitHeight="50">
+                        <Image url="@/Icons/x64/drops_marked.png"/>
+                    </ImageView>
+                </center>
+                <bottom>
+                    <Label text="Drops" styleClass="TileLabels"/>
+                </bottom>
+            </BorderPane>
+            <BorderPane fx:id="InjectionPane" styleClass="MedicineTypeTiles" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                <center>
+                    <ImageView fx:id="InjectionImageView" fitWidth="50" fitHeight="50">
+                        <Image url="@/Icons/x64/injection_marked.png"/>
+                    </ImageView>
+                </center>
+                <bottom>
+                    <Label text="Injection" styleClass="TileLabels"/>
+                </bottom>
+            </BorderPane>
+        </GridPane>
+        <BorderPane fx:id="MedicineDescriptionPane" styleClass="PaginationCenterPane" visible="false">
+            <top>
+                <Label fx:id="UsageLabel" styleClass="PaginationCenterContentTopLabel" text="Usage and side effects"/>
+            </top>
+            <center>
+                <GridPane alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="3"/>
+                        <ColumnConstraints percentWidth="45"/>
+                        <ColumnConstraints percentWidth="6"/>
+                        <ColumnConstraints percentWidth="45"/>
+                        <ColumnConstraints percentWidth="3"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints percentHeight="90"/>
+                    </rowConstraints>
+                    <TextArea GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="UsageTextArea" styleClass="AdditionalInfoTextArea" wrapText="true" promptText="Describe usage of this medicine. Max 200 symbols"/>
+                    <TextArea GridPane.columnIndex="3" GridPane.rowIndex="0" fx:id="SideEffectsTextArea" styleClass="AdditionalInfoTextArea" wrapText="true" promptText="Side effects.Leave it blank if it hasn't any side effects. Max 200 symbols"/>
+                </GridPane>
+            </center>
+
+        </BorderPane>
+        <BorderPane fx:id="ConfirmationPane" styleClass="PaginationCenterPane" visible="false">
+            <top>
+                <Label fx:id="PreviewLabel" styleClass="PaginationCenterContentTopLabel" text="Confirmation of medicine details"/>
+            </top>
+            <center>
+                <GridPane fx:id="CenterInfoGridPane" alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="3.3333"/>
+                        <ColumnConstraints percentWidth="40" halignment="LEFT"/>
+                        <ColumnConstraints percentWidth="3.3333"/>
+                        <ColumnConstraints percentWidth="40" halignment="CENTER"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints percentHeight="10"/>
+                        <RowConstraints percentHeight="80"/>
+                        <RowConstraints percentHeight="10"/>
+                    </rowConstraints>
+                    <BorderPane GridPane.rowIndex="1" GridPane.columnIndex="1">
+                        <center>
+                            <VBox spacing="20">
+                                <HBox styleClass="CenterHBoxes">
+                                    <ImageView fx:id="MedicineTypeImage" fitHeight="32" fitWidth="32">
+                                        <Image url="@/Icons/x64/user1.png"/>
+                                    </ImageView>
+                                    <Label fx:id="MedicineNameLabel" text="Medicine name"/>
+                                </HBox>
+                                <HBox styleClass="CenterHBoxes">
+                                    <ImageView fitHeight="30" fitWidth="30">
+                                        <Image url="@/Icons/x64/license.png"/>
+                                    </ImageView>
+                                    <Label fx:id="LicenseLabel" text="License for this medicine"/>
+                                </HBox>
+                            </VBox>
+                        </center>
+                    </BorderPane>
+                    <BorderPane GridPane.columnIndex="3" GridPane.rowIndex="1">
+                        <center>
+                            <VBox styleClass="ConfirmationVBoxes" alignment="TOP_CENTER" spacing="20">
+                                <Label fx:id="ConfirmationLabel" text="Click on me to confirm details on the left side"/>
+                                <CheckBox fx:id="ConfirmCheckBox" styleClass="DefaultCheckBox"/>
+                            </VBox>
+                        </center>
+                    </BorderPane>
+                </GridPane>
+            </center>
+        </BorderPane>
+        <BorderPane fx:id="SynchronizationPane" styleClass="PaginationCenterPane" visible="false">
+            <top>
+                <Label fx:id="ProcessStatusLabel" styleClass="SynchronizationLabels" text="Uploading data 0%"/>
+            </top>
+            <center>
+                <VBox alignment="CENTER">
+                    <SynchronizationAnimation fx:id="SyncAnimation" fitHeight="64" fitWidth="64">
+                        <Image url="@/Icons/x64/synchronization.png"/>
+                    </SynchronizationAnimation>
+                </VBox>
+            </center>
+            <bottom>
+                <Label fx:id="ProcessBottomLabel" styleClass="SynchronizationLabels" text="This should only take few seconds"/>
+            </bottom>
+        </BorderPane>
+        <Pagination fx:id="CustomPagination" styleClass="CustomPaginationStyle" maxPageIndicatorCount="5" pageCount="5"/>
+    </center>
+</BorderPane>

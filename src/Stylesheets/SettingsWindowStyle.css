@@ -1,0 +1,154 @@
+
+#SettingsPaginationPane {
+    -fx-background-color: linear-gradient(to top, #607D8B,#7f8c8d);
+}
+
+/* TOP */
+
+#SettingsPaginationPane #TopGridPane {
+    -fx-min-height: 60;
+    -fx-background-color:rgba(0,0,0,0.10);
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: rgba(0,0,0,0.05);
+}
+
+#SettingsPaginationPane #TitleLabel {
+    -fx-text-fill: rgba(248,248,248,0.6);
+    -fx-font-size: 20;
+    -fx-font: 20px "Akrobat Regular";
+}
+
+#SettingsPaginationPane #Pagination {
+    -fx-arrows-visible: false;
+    -fx-tooltip-visible: false;
+    -fx-page-information-visible:false;
+    -fx-rotate: 180;
+    -fx-alignment: center;
+}
+
+#SettingsPaginationPane #Pagination .pagination-control {
+    -fx-rotate: 180;
+}
+
+/* END OF TOP */
+
+/* CENTER */
+
+.PaginationInsidePanes {
+    -fx-rotate: 180;
+}
+
+.SettingsPasswordInputTextFields {
+    -fx-max-width: 400;
+    -fx-min-height: 35;
+    -fx-font-size: 18;
+    -fx-prompt-text-fill: #c6c6c6;
+    -fx-background:transparent;
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 10 0;
+    -fx-alignment: bottom-left;
+    -fx-text-fill: #f8f8f8;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: rgba(168,168,168,0.6);
+}
+
+#InvalidDetailsLabel {
+    -fx-text-fill: rgba(226, 106, 106,1);
+    -fx-font-size: 20;
+}
+
+.BottomHBox {
+    -fx-min-height: 100;
+    -fx-min-width: 500;
+    -fx-alignment: center;
+}
+
+.SettingsActionButtons {
+    -fx-background-color: rgba(44,62,80,0.2);
+    -fx-min-width: 400;
+    -fx-min-height: 50;
+    -fx-text-fill: rgba(255,255,255,0.7);
+    -fx-font: 20px "Akrobat Bold";
+}
+
+.SettingsActionButtons:hover {
+    -fx-background-color: rgba(0,0,0,0.1);
+    -fx-text-fill: rgba(255,255,255,0.5);
+    -fx-cursor: hand;
+}
+
+#AdditionalInfoChangePane #AdditionalInfoCenterVBox {
+    -fx-alignment: center;
+}
+
+
+#CacheTextCenterVBox {
+    -fx-alignment: top-center;
+    -fx-spacing: 30;
+}
+
+#AdditionalInfoChangePane #AdditionalInfoTextArea {
+    -fx-border-width: 2 2 2 2;
+    -fx-border-color: rgba(168,168,168,0.6);
+    -fx-max-width: 400;
+    -fx-min-width: 400;
+    -fx-alignment: center;
+    -fx-background-color: transparent;
+    -fx-background:transparent;
+
+}
+
+#CacheImageCountLabel {
+    -fx-font:50px "Akrobal ExtraBold";
+    -fx-text-fill: #f8f8f8;
+}
+#CacheInfoLabel {
+    -fx-font:18px "Akrobal Bold";
+    -fx-text-fill: rgba(248,248,248,0.5);
+}
+
+#CacheInfoLabel1 {
+    -fx-font:16px "Akrobal Light";
+    -fx-text-fill: rgba(248,248,248,0.5);
+}
+
+.AdditionalInfoTextArea {
+    -fx-text-fill: #f8f8f8;
+}
+
+.AdditionalInfoTextArea .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.AdditionalInfoTextArea .scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+
+
+.AdditionalInfoTextArea .scroll-pane .content{
+    -fx-background-color: transparent;
+}
+
+
+/* END OF CENTER */
+
+/* HOVER LOADING PANE */
+
+#LoadingPane {
+    -fx-background-color: linear-gradient(to top, #607D8B,#7f8c8d);
+    -fx-alignment: center;
+
+}
+
+#LoadingPane #ButtonHBox {
+    -fx-alignment: center;
+}
+
+#TransactionText {
+    -fx-text-fill: rgba(255,255,255,0.6);
+    -fx-alignment: center;
+    -fx-font: 17px "Akrobat Regular";
+    -fx-padding: 30 0 0 0;
+}
+
+/* END OF HOVER LOADING PANE */

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+<BorderPane fx:id="ImageClipBoardPane" stylesheets="@/Stylesheets/ImageClipBoardStyle.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ImageClipBoardController">
+   <top>
+       <GridPane fx:id="ToolBarPane">
+           <columnConstraints>
+               <ColumnConstraints minWidth="20"/>
+               <ColumnConstraints halignment="CENTER" minWidth="200"/>
+               <ColumnConstraints minWidth="20"/>
+               <ColumnConstraints halignment="CENTER" minWidth="200"/>
+               <ColumnConstraints minWidth="20"/>
+               <ColumnConstraints halignment="CENTER" minWidth="200"/>
+               <ColumnConstraints minWidth="20"/>
+               <ColumnConstraints halignment="CENTER" minWidth="200"/>
+               <ColumnConstraints halignment="CENTER" minWidth="120" maxWidth="120"/>
+               <ColumnConstraints halignment="CENTER" minWidth="200" maxWidth="200"/>
+           </columnConstraints>
+           <rowConstraints>
+               <RowConstraints percentHeight="100" valignment="CENTER" />
+           </rowConstraints>
+           <HBox fx:id="BrowseFolderHBox" styleClass="TopHBoxes" GridPane.columnIndex="1" GridPane.rowIndex="0">
+               <ImageView fitHeight="24" fitWidth="24" pickOnBounds="true">
+                   <Image url="@/Icons/x64/browse.png" />
+               </ImageView>
+               <Label styleClass="TopLabels" text="Browse Folder"/>
+           </HBox>
+           <HBox fx:id="BrowseHBox" styleClass="TopHBoxes" GridPane.columnIndex="3" GridPane.rowIndex="0">
+               <ImageView fitHeight="24" fitWidth="24" pickOnBounds="true">
+                   <Image url="@/Icons/x64/picture.png" />
+               </ImageView>
+               <Label styleClass="TopLabels" text="Browse Picture"/>
+           </HBox>
+           <HBox fx:id="ZoomInnHBox" styleClass="TopHBoxes" GridPane.columnIndex="5" GridPane.rowIndex="0">
+               <ImageView fitHeight="24" fitWidth="24" pickOnBounds="true">
+                   <Image url="@/Icons/x64/zoom-in.png" />
+               </ImageView>
+               <Label styleClass="TopLabels" text="Zoom Inn"/>
+           </HBox>
+           <HBox fx:id="ZoomOutHBox" styleClass="TopHBoxes" GridPane.columnIndex="7" GridPane.rowIndex="0">
+               <ImageView fitHeight="24" fitWidth="24" pickOnBounds="true">
+                   <Image url="@/Icons/x64/zoom-out.png" />
+               </ImageView>
+               <Label styleClass="TopLabels" text="Zoom Out"/>
+           </HBox>
+           <VBox alignment="CENTER" spacing="10" GridPane.columnIndex="8" GridPane.rowIndex="0">
+               <Label fx:id="XValueLabel" styleClass= "CoordinatesLabel" text="X₁ : 0"/>
+               <Label fx:id="YValueLabel" styleClass= "CoordinatesLabel" text="Y₁ : 0"/>
+           </VBox>
+           <HBox alignment="CENTER" GridPane.columnIndex="9" GridPane.rowIndex="0">
+               <Label fx:id="AngleLabel" text="Mirror angle : 0"/>
+           </HBox>
+       </GridPane>
+   </top>
+    <center>
+      <BorderPane fx:id="ImagePane">
+          <center>
+              <StackPane fx:id="CenterStackPane">
+                  <ImageView fx:id="OriginalImage"/>
+                  <Pane fx:id="RectAnglePane">
+                      <Rectangle fx:id="Rectangle" height="160" opacity="0.2" width="160" />
+                  </Pane>
+              </StackPane>
+          </center>
+          <Pane fx:id="SwitchPane">
+              <HBox fx:id="SwitchHBox">
+                  <ImageView fx:id="BackImage" pickOnBounds="true" styleClass="ScrollImages" fitWidth="24" fitHeight="24">
+                      <Image url="@/Icons/x64/back.png"/>
+                  </ImageView>
+                  <ImageView fx:id="NextImage" pickOnBounds="true" styleClass="ScrollImages" fitWidth="24" fitHeight="24">
+                      <Image url="@/Icons/x64/next.png"/>
+                  </ImageView>
+              </HBox>
+          </Pane>
+      </BorderPane>
+   </center>
+
+    <right>
+        <GridPane fx:id="RightPane">
+            <rowConstraints>
+                <RowConstraints minHeight="162" valignment="CENTER" />
+                <RowConstraints minHeight="15" valignment="CENTER" />
+                <RowConstraints minHeight="30" valignment="CENTER" />
+                <RowConstraints minHeight="15" valignment="CENTER" />
+                <RowConstraints minHeight="320" valignment="CENTER" />
+            </rowConstraints>
+            <columnConstraints>
+                <ColumnConstraints percentWidth="100" halignment="CENTER"/>
+            </columnConstraints>
+            <HBox fx:id="CapturedImageHBox" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <ImageView fx:id="CapturedImage" />
+            </HBox>
+            <Label styleClass="AsideMenuLabels" text="Diagonal : 226,3 px" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <VBox fx:id="AsideMenuVBox" GridPane.rowIndex="4" GridPane.columnIndex="0">
+                <GridPane fx:id="RotateLeftPane" styleClass="AsideMenuPanes">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="50" halignment="CENTER"/>
+                        <ColumnConstraints minWidth="112" halignment="LEFT"/>
+                    </columnConstraints>
+                    <ImageView fitHeight="20" fitWidth="20" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                        <Image url="@/Icons/x64/rotate-left.png" />
+                    </ImageView>
+                    <Label styleClass="AsideMenuLabels" text="Rotate left" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                </GridPane>
+                <GridPane fx:id="RotateRightPane" styleClass="AsideMenuPanes">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="50" halignment="CENTER"/>
+                        <ColumnConstraints minWidth="112" halignment="LEFT"/>
+                    </columnConstraints>
+                    <ImageView fitHeight="20" fitWidth="20" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                        <Image url="@/Icons/x64/rotate-to-right.png" />
+                    </ImageView>
+                    <Label styleClass="AsideMenuLabels" text="Rotate right" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                </GridPane>
+                <GridPane fx:id="UploadPane" styleClass="AsideMenuPanes">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="50" halignment="CENTER"/>
+                        <ColumnConstraints minWidth="112" halignment="LEFT"/>
+                    </columnConstraints>
+                    <ImageView fitHeight="20" fitWidth="20" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                        <Image url="@/Icons/x64/upload.png" />
+                    </ImageView>
+                    <Label styleClass="AsideMenuLabels" text="Upload" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                </GridPane>
+                <GridPane fx:id="SavePane" styleClass="AsideMenuPanes">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="50" halignment="CENTER"/>
+                        <ColumnConstraints minWidth="112" halignment="LEFT"/>
+                    </columnConstraints>
+                    <ImageView fitHeight="20" fitWidth="20" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                        <Image url="@/Icons/x64/save-file-option.png" />
+                    </ImageView>
+                    <Label styleClass="AsideMenuLabels" text="Save" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                </GridPane>
+                <GridPane fx:id="ExitPane" styleClass="AsideMenuPanes">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="50" halignment="CENTER"/>
+                        <ColumnConstraints minWidth="112" halignment="LEFT"/>
+                    </columnConstraints>
+                    <ImageView fitHeight="20" fitWidth="20" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                        <Image url="@/Icons/x32/exit_button_white.png" />
+                    </ImageView>
+                    <Label styleClass="AsideMenuLabels" text="Exit" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                </GridPane>
+                <Label fx:id="SensitiveInformationLabel" text="No Nudes!"/>
+            </VBox>
+        </GridPane>
+    </right>
+    <bottom>
+        <GridPane fx:id="BottomPane">
+            <columnConstraints>
+                <ColumnConstraints minWidth="30"/>
+                <ColumnConstraints minWidth="50" halignment="LEFT"/>
+                <ColumnConstraints minWidth="920" halignment="CENTER"/>
+                <ColumnConstraints minWidth="200" halignment="CENTER"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints percentHeight="100" valignment="CENTER"/>
+            </rowConstraints>
+            <HBox alignment="CENTER" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                <ImageView fitHeight="24" fitWidth="24">
+                    <Image url="@/Icons/x64/keyboard.png" />
+                </ImageView>
+            </HBox>
+            <HBox GridPane.columnIndex="2" GridPane.rowIndex="0" alignment="CENTER">
+                <Label styleClass="BottomLabels" text="Shift + I = Zoom inn, Shift + O = Zoom out, Shift + U = Upload, Shift + S = Save, Shift + Left = Mirror rotation, Shift + Right = mirror rotation "/>
+            </HBox>
+            <HBox GridPane.columnIndex="3" GridPane.rowIndex="0" alignment="CENTER">
+                <Label fx:id="CopyrightLabel" styleClass="BottomLabels" text="© Health-System.eu 2017"/>
+            </HBox>
+        </GridPane>
+
+    </bottom>
+
+</BorderPane>

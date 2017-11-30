@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.control.Pagination?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.ListView?>
+<?import Animations2D.SynchronizationAnimation?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.CheckBox?>
+<BorderPane fx:id="InsertPrescriptionBasePane" stylesheets="@/Stylesheets/InsertPrescriptionPaneStyle.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.InsideControllers.InsertPrescriptionController">
+    <top>
+        <GridPane fx:id="InsertPrescriptionTopSelectionBarGridPane">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="25" halignment="CENTER"/>
+                <ColumnConstraints percentWidth="25" halignment="CENTER"/>
+                <ColumnConstraints percentWidth="25" halignment="CENTER"/>
+                <ColumnConstraints percentWidth="25" halignment="CENTER"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="50" maxHeight="50"/>
+            </rowConstraints>
+            <HBox fx:id="PatientHBox" styleClass="SwitchHBoxes" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <Circle fx:id="SelectedPatientImageCircle" radius="18"/>
+                <Label styleClass="SwitchLabels" fx:id="PatientLabel" text="Patient"/>
+            </HBox>
+            <HBox fx:id="MedicineHBox" styleClass="SwitchHBoxes" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <ImageView fx:id="SelectedMedicineIcon" fitHeight="32" fitWidth="32">
+                    <Image url="@/Icons/x64/2-pills.png"/>
+                </ImageView>
+                <Label styleClass="SwitchLabels" fx:id="MedicineLabel" text="Medicine"/>
+            </HBox>
+            <HBox fx:id="SpecialNotesHBox" styleClass="SwitchHBoxes" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                <ImageView fitHeight="24" fitWidth="24">
+                    <Image url="@/Icons/x64/specialNotes.png"/>
+                </ImageView>
+                <Label styleClass="SwitchLabels" fx:id="SpecialNotesLabel" text="Special Notes"/>
+            </HBox>
+            <HBox fx:id="UploadHBox" styleClass="SwitchHBoxes" GridPane.columnIndex="3" GridPane.rowIndex="0">
+                <ImageView fitHeight="24" fitWidth="24">
+                    <Image url="@/Icons/x64/upload.png"/>
+                </ImageView>
+                <Label styleClass="SwitchLabels" fx:id="PrescriptionLabel" text="Upload to server"/>
+            </HBox>
+        </GridPane>
+    </top>
+    <center>
+        <StackPane fx:id="SelectPatientStackPane">
+            <GridPane fx:id="SelectPatientPane">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="40"/>
+                    <ColumnConstraints percentWidth="2.5"/>
+                    <ColumnConstraints percentWidth="57.5"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints percentHeight="100"/>
+                </rowConstraints>
+                <BorderPane fx:id="SearchPatientPane" styleClass="SearchPanes" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <top>
+                        <HBox fx:id="BrowseTextInputHBox" styleClass="BrowsePersonSearchPaneTopHBoxStyle" alignment="CENTER">
+                            <TextField fx:id="PatientNameInput" promptText="Patient Name"/>
+                            <ImageView fx:id="BrowsePaneSearchIcon" styleClass="BrowseIcon" pickOnBounds="true" fitWidth="30" fitHeight="30">
+                                <Image url="@/Icons/x64/search.png"/>
+                            </ImageView>
+                        </HBox>
+                    </top>
+                    <center>
+                        <BorderPane fx:id="BrowseListViewPane" styleClass="BrowsePersonListViewPane">
+                            <center>
+                                <ListView fx:id="PatientBrowseListView" styleClass="DefaultBrowseListView"/>
+                            </center>
+                        </BorderPane>
+                    </center>
+                </BorderPane>
+                <BorderPane fx:id="PatientInformationPane" styleClass="RightBrowsePanes" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                    <center>
+                        <VBox fx:id="CenterSplitVBox" styleClass="CenterSplitVBox">
+                            <Circle fx:id="PatientAvatarCircle" radius="70"/>
+                            <Label fx:id="NameLabel" text="No data yet"/>
+                        </VBox>
+                    </center>
+                    <bottom>
+                        <HBox fx:id="SelectPatientHBox" styleClass="NextHBoxStyle">
+                            <Label fx:id="NextToMedicinePaneLabel" text="Select this patient"/>
+                            <ImageView fitWidth="32" fitHeight="32">
+                                <Image url="@/Icons/x64/keyboard-right-arrow.png"/>
+                            </ImageView>
+                        </HBox>
+                    </bottom>
+                </BorderPane>
+            </GridPane>
+            <BorderPane fx:id="PatientLoadPane" styleClass="LoadingPanes" visible="false">
+                <center>
+                    <SynchronizationAnimation fx:id="SyncAnimation" fitHeight="64" fitWidth="64">
+                        <Image url="@/Icons/x64/hourglass.png"/>
+                    </SynchronizationAnimation>
+                </center>
+            </BorderPane>
+        </StackPane>
+
+        <StackPane fx:id="SelectMedicineStackPane">
+            <GridPane fx:id="SelectMedicinePane">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="40"/>
+                    <ColumnConstraints percentWidth="2.5"/>
+                    <ColumnConstraints percentWidth="57.5"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints percentHeight="100"/>
+                </rowConstraints>
+                <BorderPane fx:id="SearchMedicinePane" styleClass="SearchPanes" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <top>
+                        <HBox fx:id="BrowseMedicineTextInputHBox" styleClass="BrowsePersonSearchPaneTopHBoxStyle" alignment="CENTER">
+                            <TextField fx:id="MedicineNameInput" promptText="Medicine Name"/>
+                            <ImageView fx:id="BrowseMedicinePaneSearchIcon" styleClass="BrowseIcon" pickOnBounds="true" fitWidth="35" fitHeight="35">
+                                <Image url="@/Icons/x64/search.png"/>
+                            </ImageView>
+                        </HBox>
+                    </top>
+                    <center>
+                        <BorderPane fx:id="BrowseMedicineListViewPane" styleClass="BrowsePersonListViewPane">
+                            <center>
+                                <ListView fx:id="MedicineBrowseListView" styleClass="DefaultBrowseListView"/>
+                            </center>
+                        </BorderPane>
+                    </center>
+                </BorderPane>
+                <BorderPane fx:id="MedicineInformationPane" styleClass="RightBrowsePanes" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                    <center>
+                        <BorderPane fx:id="MedicinePreviewPane">
+                            <center>
+                                <HBox fx:id="MedicineInformationHBox" alignment="CENTER">
+                                    <ImageView fx:id="MedicineIcon" fitHeight="64" fitWidth="64"/>
+                                    <Label fx:id="MedicineNameLabel" text="Medicine is not selected yet"/>
+                                </HBox>
+                            </center>
+                            <bottom>
+                                <Label fx:id="MedicineLookupLabel" text="Click here for more information about this medicine"/>
+                            </bottom>
+                        </BorderPane>
+                    </center>
+                    <bottom>
+                        <HBox fx:id="SelectMedicineHBox" styleClass="NextHBoxStyle">
+                            <Label fx:id="NextToNotesPaneLabel" text="Select this medicine"/>
+                            <ImageView fitWidth="32" fitHeight="32">
+                                <Image url="@/Icons/x64/keyboard-right-arrow.png"/>
+                            </ImageView>
+                        </HBox>
+                    </bottom>
+                </BorderPane>
+            </GridPane>
+            <BorderPane fx:id="MedicineLoadPane" styleClass="LoadingPanes" visible="false">
+                <center>
+                    <SynchronizationAnimation fx:id="MedicineSyncAnimation" fitHeight="64" fitWidth="64">
+                        <Image url="@/Icons/x64/hourglass.png"/>
+                    </SynchronizationAnimation>
+                </center>
+            </BorderPane>
+        </StackPane>
+
+        <GridPane fx:id="SpecialNotesPane" alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="60" halignment="CENTER"/>
+                <ColumnConstraints percentWidth="2.5"/>
+                <ColumnConstraints percentWidth="37.5" halignment="CENTER"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints percentHeight="90" valignment="CENTER"/>
+            </rowConstraints>
+            <BorderPane GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <center>
+                    <TextArea fx:id="SpecialNotesTextArea" styleClass="AdditionalInfoTextArea" promptText="Special Notes here. This part of prescription will be visible only for patient. Max 2000 symbols"/>
+                </center>
+            </BorderPane>
+            <BorderPane fx:id="ConfirmationPane" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                <center>
+                    <VBox spacing="20" alignment="CENTER">
+                        <CheckBox fx:id="ConfirmCheckBox" styleClass="RoundedCheckBox" text="I Confirm prescription details"/>
+                    </VBox>
+                </center>
+                <bottom>
+                    <HBox fx:id="ConfirmationHBox" styleClass="NextHBoxStyle">
+                        <Label fx:id="UploadLabel" text="Confirm and upload"/>
+                        <ImageView fitWidth="32" fitHeight="32">
+                            <Image url="@/Icons/x64/keyboard-right-arrow.png"/>
+                        </ImageView>
+                    </HBox>
+                </bottom>
+            </BorderPane>
+        </GridPane>
+
+        <BorderPane fx:id="UploadPane">
+            <center>
+                <VBox alignment="CENTER" spacing="20">
+                    <SynchronizationAnimation fx:id="UploadSyncAnimation" fitWidth="64" fitHeight="64">
+                        <Image url="@/Icons/x64/hourglass.png"/>
+                    </SynchronizationAnimation>
+                    <Label fx:id="LoadingLabel" text="Okay, now i am working to upload data to database. Please be patient"/>
+                </VBox>
+            </center>
+        </BorderPane>
+        <Pagination fx:id="CustomPagination" styleClass="CustomPaginationStyle" maxPageIndicatorCount="4"/>
+    </center>
+</BorderPane>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.ListView?>
+<?import Animations2D.SynchronizationAnimation?>
+
+<?import javafx.scene.layout.StackPane?>
+<StackPane fx:id="BrowseControllerCenterStackPane" stylesheets="@/Stylesheets/AdminBrowsePanesDesign.css" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.InsideControllers.BrowseMedicineController">
+    <BorderPane fx:id="BrowseMedicineRootPane" styleClass="BrowseRootPaneStyle">
+        <top>
+            <HBox fx:id="BrowseTopPane" styleClass="BrowseTitlePane">
+                <HBox styleClass="IconHBox">
+                    <ImageView fitHeight="24" fitWidth="24">
+                        <Image url="@/Icons/x64/pill-capsule.png"/>
+                    </ImageView>
+                </HBox>
+                <TextField fx:id="NameInput" promptText="Medicine name"/>
+                <Label fx:id="SearchLabel" styleClass="SearchLabels" text="Search">
+                    <graphic>
+                        <ImageView styleClass="ButtonImages" fitHeight="32" fitWidth="32">
+                            <Image url="@/Icons/x64/search_white.png"/>
+                        </ImageView>
+                    </graphic>
+                </Label>
+            </HBox>
+        </top>
+
+        <center>
+            <GridPane fx:id="BrowseCenterGridPane">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="60"/>
+                    <ColumnConstraints percentWidth="40"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints percentHeight="100"/>
+                </rowConstraints>
+                <BorderPane fx:id="BrowseMiddleLeftPane" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                    <center>
+                        <BorderPane fx:id="BrowseListViewPane" styleClass="BrowseListViewPaneStyle">
+                            <center>
+                                <ListView fx:id="BrowseListView" styleClass="DefaultBrowseListView"/>
+                            </center>
+                        </BorderPane>
+                    </center>
+                </BorderPane>
+                <BorderPane fx:id="PreviewPane" styleClass="BrowsePreViewPaneStyle" GridPane.rowIndex="0" GridPane.columnIndex="1" >
+                    <top>
+                        <HBox fx:id="PreViewTopHBox">
+                            <Label fx:id="TopLabel" text="Medicine preview"/>
+                        </HBox>
+                    </top>
+                    <center>
+                        <VBox fx:id="InfoVBox" spacing="20">
+                            <Label fx:id="TypeLabel" text="No data"/>
+                            <StackPane fx:id="ImagePane" >
+                                <ImageView fx:id="ImageSquare" fitHeight="64" fitWidth="64">
+                                    <Image url="@/Icons/x64/2-pills.png"/>
+                                </ImageView>
+                            </StackPane>
+                            <Label fx:id="NameLabel" text="No data"/>
+                        </VBox>
+                    </center>
+                    <bottom>
+                        <GridPane styleClass="BrowsePersonBottomPaneDesign">
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="100" halignment="CENTER"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="45" maxHeight="45" valignment="CENTER"/>
+                            </rowConstraints>
+                            <Label styleClass="ActionLabels" fx:id="StatusLabel" text="Status" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                                <graphic>
+                                    <ImageView fitWidth="24" fitHeight="24">
+                                        <Image url="@/Icons/x64/edit.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Label>
+                        </GridPane>
+                    </bottom>
+                </BorderPane>
+            </GridPane>
+        </center>
+    </BorderPane>
+    <BorderPane fx:id="LoadingPane" visible="false">
+        <center>
+            <SynchronizationAnimation fx:id="SyncAnimation" fitHeight="64" fitWidth="64">
+                <Image url="@/Icons/x64/synchronization.png"/>
+            </SynchronizationAnimation>
+        </center>
+    </BorderPane>
+</StackPane>
+

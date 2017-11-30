@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.TextArea?>
+<?import Animations2D.SynchronizationAnimation?>
+<?import javafx.scene.control.ListView?>
+<StackPane fx:id="PrescriptionArchiveBaseStackPane" stylesheets="@/Stylesheets/UserPrescriptionArchive.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.InsideControllers.PrescriptionArchiveController">
+    <BorderPane fx:id="PrescriptionBasePane">
+        <top>
+            <HBox fx:id="TopHBox">
+                <Label fx:id="TopLabel" text="Archive of Your last 200 prescriptions"/>
+                <ImageView fitWidth="24" fitHeight="24">
+                    <Image url="@/Icons/x64/prescription_marked.png"/>
+                </ImageView>
+            </HBox>
+        </top>
+        <center>
+            <GridPane fx:id="PrescriptionArchiveGridPane">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="40"/>
+                    <ColumnConstraints percentWidth="60"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints percentHeight="90" valignment="CENTER"/>
+                </rowConstraints>
+                <BorderPane fx:id="PrescriptionListViewPane" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <center>
+                        <ListView fx:id="PrescriptionListView"/>
+                    </center>
+                </BorderPane>
+                <BorderPane GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <top>
+                        <GridPane fx:id="SelectionGridPane">
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="50" halignment="CENTER"/>
+                                <ColumnConstraints percentWidth="50" halignment="CENTER"/>
+                            </columnConstraints>
+                            <Label fx:id="PrescriptionInformationLabel" styleClass="SelectionLabelsStyle" text="Prescription information" GridPane.columnIndex="0"/>
+                            <Label fx:id="SpecialNotesLabel"  styleClass="SelectionLabelsStyle" text="Special Notes" GridPane.columnIndex="1"/>
+                        </GridPane>
+                    </top>
+                    <center>
+                        <StackPane fx:id="CenterStackPane">
+                            <GridPane fx:id="InformationGridPane">
+                                <rowConstraints>
+                                    <RowConstraints percentHeight="2.5"/>
+                                    <RowConstraints percentHeight="23.5" minHeight="75"/>
+                                    <RowConstraints percentHeight="2.5"/>
+                                    <RowConstraints percentHeight="23.5" minHeight="75"/>
+                                    <RowConstraints percentHeight="2.5"/>
+                                    <RowConstraints percentHeight="23.5" minHeight="75"/>
+                                    <RowConstraints percentHeight="20" minHeight="75"/>
+                                </rowConstraints>
+                                <columnConstraints>
+                                    <ColumnConstraints percentWidth="5" halignment="CENTER"/>
+                                    <ColumnConstraints percentWidth="90" halignment="CENTER"/>
+                                    <ColumnConstraints percentWidth="5" halignment="CENTER"/>
+                                </columnConstraints>
+                                <HBox fx:id="DoctorHBox" styleClass="InformationHBoxes" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                                    <HBox styleClass="CircleHBoxes">
+                                        <Circle radius="20" fx:id="DoctorImageCircle"/>
+                                    </HBox>
+                                    <Label styleClass="NameLabels" fx:id="DoctorNameLabel" text="None yet"/>
+                                </HBox>
+                                <HBox styleClass="InformationHBoxes" GridPane.rowIndex="3" GridPane.columnIndex="1">
+                                    <HBox styleClass="CircleHBoxes">
+                                        <Circle radius="20" fx:id="PatientImageCircle" GridPane.columnIndex="1"/>
+                                    </HBox>
+                                    <Label styleClass="NameLabels"  fx:id="PatientNameLabel" text="None yet"/>
+                                </HBox>
+                                <HBox styleClass="InformationHBoxes" GridPane.rowIndex="5" GridPane.columnIndex="1">
+                                    <HBox styleClass="CircleHBoxes">
+                                        <ImageView fx:id="MedicineIcon" fitHeight="60" fitWidth="60">
+                                            <Image url="@/Icons/x64/injection_marked.png"/>
+                                        </ImageView>
+                                    </HBox>
+                                    <Label styleClass="NameLabels"  fx:id="MedicineNameLabel" text="None"/>
+                                </HBox>
+                                <Label fx:id="StatusLabel" text="Status : no information yet" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+                            </GridPane>
+                            <BorderPane fx:id="SpecialNotesPane" visible="false">
+                                <center>
+                                    <HBox>
+                                       <TextArea fx:id="SpecialNotesTextArea" styleClass="InputTextAreas" disable="true"/>
+                                    </HBox>
+                                </center>
+                            </BorderPane>
+                        </StackPane>
+                    </center>
+                </BorderPane>
+            </GridPane>
+        </center>
+    </BorderPane>
+
+    <BorderPane fx:id="LoadingPane" visible="false">
+        <center>
+            <SynchronizationAnimation fx:id="SyncAnimation" fitHeight="64" fitWidth="64">
+                <Image url="@/Icons/x64/hourglass.png"/>
+            </SynchronizationAnimation>
+        </center>
+    </BorderPane>
+
+</StackPane>

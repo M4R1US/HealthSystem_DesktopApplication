@@ -1,0 +1,161 @@
+#EditDetailsPaginationPane {
+    -fx-background-color: linear-gradient(to top, #607D8B,#7f8c8d);
+}
+
+#EditLoadPane {
+    -fx-background-color: linear-gradient(to top, #607D8B,#7f8c8d);
+    -fx-alignment: center;
+}
+
+#EditLoadPane #ButtonHBox {
+    -fx-alignment: center;
+}
+
+#EditLoadPane #ButtonHBox:hover {
+    -fx-cursor: hand;
+}
+
+#EditDetailsPaginationPane #Pagination {
+    -fx-arrows-visible: false;
+    -fx-tooltip-visible: false;
+    -fx-page-information-visible:false;
+    -fx-rotate: 180;
+    -fx-alignment: center;
+}
+
+#EditDetailsPaginationPane #Pagination .pagination-control {
+    -fx-rotate: 180;
+}
+
+#EditDetailsPaginationPane #TopLabel {
+    -fx-background-color: rgba(0,0,0,0.10);
+    -fx-min-height: 60;
+    -fx-min-width: 500;
+    -fx-max-width: 500;
+    -fx-font:20px "Akrobat Regular";
+    -fx-alignment: center;
+    -fx-text-fill: rgba(248,248,248,0.5);
+}
+
+.PaginationInsidePanes {
+    -fx-rotate: 180;
+}
+
+.SettingsPasswordInputTextFields {
+    -fx-max-width: 400;
+    -fx-min-height: 35;
+    -fx-font-size: 18;
+    -fx-prompt-text-fill: #c6c6c6;
+    -fx-background:transparent;
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 10 0;
+    -fx-alignment: bottom-left;
+    -fx-text-fill: #f8f8f8;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: rgba(168,168,168,0.6);
+}
+
+#AvatarPane {
+    -fx-alignment: center;
+}
+
+#AvatarCircle {
+    -fx-stroke:rgba(0,51,102,0.2);
+}
+
+#AvatarBottomLabel {
+    -fx-text-fill: rgba(0,0,0,0.5);
+    -fx-font: 30px "Decalotype Light";
+}
+
+.BottomHBox {
+    -fx-min-height: 100;
+    -fx-min-width: 500;
+    -fx-alignment: center;
+}
+
+.AdditionalInfoTextArea {
+    -fx-text-fill: #f8f8f8;
+}
+
+.AdditionalInfoTextArea .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.AdditionalInfoTextArea .scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+
+
+.AdditionalInfoTextArea .scroll-pane .content{
+    -fx-background-color: transparent;
+}
+
+.AdditionalInfoTextArea {
+    -fx-pref-height: 2000;
+    -fx-prompt-text-fill: #c6c6c6;
+    -fx-font-size: 18;
+}
+
+#AdditionalInfoChangePane #AdditionalInfoTextArea {
+    -fx-border-width: 2 2 2 2;
+    -fx-border-color: rgba(168,168,168,0.6);
+    -fx-max-width: 400;
+    -fx-min-width: 400;
+    -fx-alignment: center;
+    -fx-background-color: transparent;
+    -fx-background:transparent;
+}
+
+
+#MiddleButtonHBox {
+    -fx-alignment: center;
+    -fx-spacing: 30;
+}
+
+#AdditionalInfoChangePane #AdditionalInfoCenterVBox {
+    -fx-alignment: center;
+}
+
+#TransactionText {
+    -fx-text-fill: rgba(255,255,255,0.6);
+    -fx-alignment: center;
+    -fx-font: 17px "Akrobat Regular";
+    -fx-padding: 30 0 0 0;
+}
+
+
+.MiddleButtons {
+    -fx-background-color: rgba(255,255,255,0.05);
+    -fx-text-fill: rgba(248,248,248,0.8);
+    -fx-background-radius: 2 2 2 2;
+    -fx-font-size: 16;
+    -fx-min-height: 50;
+    -fx-graphic-text-gap: 15;
+    -fx-min-width: 180;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);
+}
+
+#ResetPasswordButton {
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: rgba(255,255,255,0.3);
+    -fx-border-radius: 2 2 2 2;
+}
+
+.MiddleButtons:hover {
+    -fx-cursor: hand;
+}
+
+.SettingsActionButtons {
+    -fx-background-color: rgba(44,62,80,0.2);
+    -fx-min-width: 400;
+    -fx-min-height: 50;
+    -fx-text-fill: rgba(255,255,255,0.7);
+    -fx-font: 20px "Akrobat Bold";
+}
+
+.SettingsActionButtons:hover {
+    -fx-background-color: rgba(0,0,0,0.1);
+    -fx-text-fill: rgba(255,255,255,0.5);
+    -fx-cursor: hand;
+}

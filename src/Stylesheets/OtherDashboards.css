@@ -1,0 +1,315 @@
+
+
+#RootPane {
+    -fx-background-color: linear-gradient(to top, #607D8B,#7f8c8d);
+}
+
+
+
+/* TOP */
+#TopGridPane {
+    -fx-background-color: rgba(44,62,80,0.2);
+    -fx-min-height: 50;
+    -fx-alignment: center;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: rgba(0,0,0,0.1);
+}
+
+#DashboardTitleLabel {
+    -fx-text-fill: rgba(255,255,255,0.6);
+    -fx-font: 20px "Akrobat Bold";
+    -fx-min-height: 50;
+    -fx-alignment: center-left;
+    -fx-padding: 0 0 0 25;
+}
+
+#AppIconHBox {
+    -fx-background-color: rgba(0,0,0,0.10);
+}
+
+#AppIconHBox:hover {
+    -fx-background-color: rgba(0,0,0,0.20);
+    -fx-cursor: hand;
+}
+
+#SceneActionMenuButton {
+    -fx-background-color: transparent;
+    -fx-arrows-visible: false;
+    -fx-min-width: 50;
+    -fx-max-width: 50;
+    -fx-min-height: 50;
+    -fx-max-height: 50;
+    -fx-alignment: center;
+    -fx-padding: 0 0 0 5
+}
+
+#SceneActionMenuButton .context-menu {
+    -fx-background-color: rgba(0,0,0,0.20);
+    -fx-min-width: 50;
+    -fx-max-width: 50;
+    -fx-min-height: 180;
+    -fx-max-height: 180;
+    -fx-alignment: center;
+}
+
+#SceneActionMenuButton .menu-item:hover {
+    -fx-background-color: inherit;
+    -fx-cursor: hand;
+}
+
+#SceneActionMenuButton > .arrow-button {
+    -fx-padding: 0;
+}
+
+#SceneActionMenuButton > .arrow-button > .arrow {
+    -fx-padding: 0;
+}
+
+.SelectIconsHBoxes {
+    -fx-min-width: 50;
+    -fx-max-width: 50;
+    -fx-min-height: 50;
+    -fx-max-height: 50;
+    -fx-alignment: center;
+    -fx-padding: 0 0 0 5;
+}
+
+.HoverIcons:hover {
+    -fx-background-color: rgba(0,0,0,0.20);
+    -fx-cursor: hand;
+}
+
+
+#SettingsButtonHBox {
+    -fx-background-color: rgba(0,0,0,0.20);
+}
+
+#SettingsButtonHBox:hover {
+    -fx-background-color: rgba(255,255,255,0.1);
+    -fx-cursor: hand;
+}
+
+#DigitalClockLabel {
+    -fx-text-fill: rgba(255,255,255,0.7);
+    -fx-min-height: 50;
+    -fx-font-size: 30;
+}
+
+#AccountHBox {
+    -fx-background-color: rgba(0,0,0,0.10);
+    -fx-min-height: 50;
+    -fx-max-height: 50;
+    -fx-alignment: center;
+    -fx-spacing: 20;
+}
+
+#DashboardTitleUserLabel {
+    -fx-text-fill: #CFD8DC;
+    -fx-font: 18px "Akrobat ExtraBold";
+}
+
+#ProfileImageCircle:hover {
+    -fx-cursor: hand;
+}
+
+#ActionHBox {
+    -fx-background-color: rgba(0,0,0,0.20);
+    -fx-alignment: center;
+}
+
+#ActionHBox:hover {
+    -fx-cursor: hand;
+    -fx-background-color: rgba(255,255,255,0.10);
+}
+
+
+/* End of top */
+
+/* Center */
+
+#InfoPane {
+    -fx-alignment: center;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: rgba(255,255,255,0.2);
+    -fx-background-color: rgba(189,189,189,0.2);
+    -fx-opacity: 1;
+}
+
+#AboutTitleLabel {
+    -fx-min-height: 100;
+    -fx-graphic-text-gap: 20;
+    -fx-font: 25px "Akrobat Light";
+    -fx-text-fill: rgba(52,73,94,0.8);
+    -fx-alignment: center;
+}
+
+
+#ServerInfoVBox .EditLabel {
+    -fx-padding: 0 0 0 50;
+}
+
+#ProtocolsVBox .EditLabel {
+    -fx-alignment: center-right;
+}
+.CustomPaginationStyle {
+    -fx-arrows-visible: false;
+    -fx-tooltip-visible: false;
+    -fx-page-information-visible:false;
+}
+
+#InformationCenterGridPane {
+    -fx-alignment: center;
+}
+
+.ServerInfoCenterHBoxes {
+    -fx-alignment: center;
+}
+
+.InnerPanes .InfoTopLabels {
+    -fx-text-fill: rgba(52,73,94,0.8);
+    -fx-graphic-text-gap: 25;
+    -fx-font: 20px "Decalotype Light";
+    -fx-alignment: center;
+}
+
+.InnerPanes .ServerInfoCenterHBoxes .NameLabel {
+    -fx-min-width: 200;
+    -fx-max-width: 200;
+    -fx-text-fill: rgba(248,248,248,0.7);
+    -fx-font: 20px "Akrobat Bold";
+    -fx-padding: 0 0 0 15;
+}
+
+.InnerPanes .ServerInfoCenterHBoxes .EditLabel {
+    -fx-font: 20px "Akrobat Light";
+    -fx-text-fill: rgba(248,248,248,0.7);
+    -fx-min-width: 200;
+    -fx-alignment: center-left;
+    -fx-padding: 0 0 0 10;
+}
+
+/* End of center */
+
+/* Bottom */
+
+#DashboardBottom {
+    -fx-min-height: 50;
+    -fx-max-height: 50;
+    -fx-background-color: rgba(44,62,80,0.2);
+    -fx-alignment: center;
+    -fx-spacing: 80;
+    -fx-border-width: 1 0 0 0;
+    -fx-border-color: rgba(255,255,255,0.1);
+}
+
+#DashboardBottom .label {
+    -fx-text-fill: rgba(255,255,255,0.7);
+    -fx-font: 15px "Decalotype Medium";
+}
+
+#DashboardBottom .label:hover {
+    -fx-cursor: hand;
+    -fx-underline: true;
+}
+
+#UserInformationPane #WelcomeLabel{
+    -fx-font: 30px "Akrobat Thin";
+    -fx-text-fill: rgba(248,248,248,0.7);
+}
+
+#UserInformationPane #MiddleLabel {
+    -fx-font: 25px "Decalotype Light";
+    -fx-text-fill: rgba(248,248,248,0.5);
+}
+
+#UserInformationPane #LastUsedDeviceLabel {
+    -fx-font: 20px "Decalotype Medium";
+    -fx-text-fill: rgba(248,248,248,0.5);
+}
+
+/* End of bottom */
+
+
+/* Connection panes */
+
+.TransparentVBoxStyle {
+    -fx-spacing: 20;
+    -fx-alignment: center;
+}
+
+.TransparentPaneStyle {
+    -fx-background-color: rgba(0,30,61,0.8);
+    -fx-alignment: center;
+}
+
+.FrontLabel {
+    -fx-font-size: 35;
+    -fx-graphic-text-gap: 30;
+    -fx-text-fill: rgba(255,255,255,0.8);
+}
+
+.FollowingUpLabel {
+    -fx-text-fill: rgba(255,255,255,0.6);
+    -fx-font: 30px "Akrobat SemiBold";
+    -fx-font-size: 30;
+}
+
+/* End of connection panes */
+
+/* ActionPane */
+
+#ActionGridPane {
+    -fx-alignment: center;
+    -fx-background-color: linear-gradient(to top, #607D8B,#7f8c8d);
+    -fx-hgap: 30;
+    -fx-vgap: 30;
+
+}
+
+.ActionVBoxStyle {
+    -fx-alignment: top-center;
+    -fx-spacing: 30;
+}
+
+#SelectLabelHBox {
+    -fx-min-width: 830;
+    -fx-max-width: 830;
+    -fx-min-height: 70;
+    -fx-max-height: 70;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: rgba(52,73,94,0.4);
+
+}
+
+#SelectLabel {
+    -fx-text-fill: rgba(52,73,94,0.8);
+    -fx-graphic-text-gap: 25;
+    -fx-font: 20px "Decalotype Light";
+    -fx-alignment: center-left;
+    -fx-min-width: 800;
+    -fx-max-width: 800;
+}
+
+.ActionPaneClickableLabels {
+    -fx-text-fill: rgba(255,255,255,0.8);
+    -fx-font: 20px "Akrobat ExtraBold";
+}
+
+.ActionPaneClickableLabels:hover {
+    -fx-text-fill: rgba(52,73,94,0.8);
+    -fx-border-insets: 10 0 0 0;
+    -fx-cursor: hand;
+}
+
+.ActionIcons {
+    -fx-opacity: 0.7;
+}
+
+
+#DownArrow:hover {
+    -fx-cursor: hand;
+    -fx-opacity: 0.8;
+}
+
+
+/* End of ActionPane */

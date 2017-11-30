@@ -1,0 +1,172 @@
+
+#LoadingPane {
+    -fx-background-color: rgba(44, 62, 80,0.6);
+}
+
+#PrescriptionWindowBasePane {
+    -fx-background-color: linear-gradient(to top, #607D8B,#7f8c8d);
+}
+
+#PrescriptionArchiveGridPane {
+    -fx-hgap: 20;
+    -fx-alignment: center;
+    -fx-padding: 0 15 0 15;
+}
+
+#PrescriptionBasePane {
+    -fx-padding: 10 10 10 10;
+    -fx-background-color: rgba(189,189,189,0.1);
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: rgba(255,255,255,0.2);
+    -fx-background-radius: 2 2 2 2;
+    -fx-border-radius: 2 2 2 2;
+}
+
+#TopHBox {
+    -fx-min-height: 50;
+    -fx-max-height: 50;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #7A8085;
+    -fx-border-insets: 0 15 0 15;
+    -fx-alignment: center;
+}
+
+#TopHBox .label {
+    -fx-min-height: 50;
+    -fx-max-height: 50;
+    -fx-text-fill: rgba(52,73,94,0.7);
+    -fx-font: 20px "Decalotype Light";
+}
+
+/* LEFT */
+
+#PrescriptionListViewPane {
+    -fx-border-insets: 10 0 10 0;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: rgba(0,0,0,0.1);
+}
+
+#PrescriptionListView{
+    -fx-border-insets: 5 5 15 5;
+    -fx-border-color:transparent;
+    -fx-background-color: transparent;
+    -fx-border-width: 4 4 4 4;
+}
+
+#PrescriptionListView .list-cell:odd, .list-cell:even, .scroll-bar{
+    -fx-background-color: transparent;
+}
+
+#PrescriptionListView .list-cell:odd, .list-cell:even,
+.scroll-bar:vertical .increment-button, .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+}
+
+#PrescriptionListView .scroll-bar:horizontal .increment-arrow,
+.scroll-bar:horizontal .decrement-arrow,
+.scroll-bar:horizontal .increment-button,
+.scroll-bar:horizontal .decrement-button {
+    -fx-padding: 0;
+}
+
+#PrescriptionListView .list-cell {
+    -fx-text-fill: rgba(52,73,94,0.8);
+    -fx-font: 20px "Akrobat Bold";
+}
+
+#PrescriptionListView .scroll-bar:vertical .increment-arrow, .scroll-bar:vertical .decrement-arrow, .thumb {
+    -fx-background-color: rgba(0,51,102,0.5);
+}
+
+#PrescriptionListView .list-cell:selected {
+    -fx-background-color: rgba(0,0,0,0.10);
+    -fx-padding: 0 0 0 30;
+    -fx-font: 25px "Akrobat Bold";
+}
+
+/* END OF LEFT */
+
+/* RIGHT */
+
+#InformationGridPane {
+    -fx-vgap: 5;
+    -fx-alignment: top-center;
+}
+
+.InformationHBoxes {
+    -fx-background-color: rgba(103, 128, 159,0.2);
+    -fx-min-height: 70;
+    -fx-spacing: 30;
+    -fx-alignment: center-left;
+    -fx-padding: 0 0 0 20;
+    -fx-border-width:  1 1 1 1;
+    -fx-border-color: rgba(0,0,0,0.10);
+}
+
+.CircleHBoxes {
+    -fx-min-height: 75;
+    -fx-min-width: 75;
+    -fx-alignment: center;
+}
+
+#SelectionGridPane {
+    -fx-min-height: 50;
+    -fx-max-height: 50;
+    -fx-spacing: 40;
+    -fx-alignment: center;
+    -fx-min-width: inherit;
+}
+
+.SelectionLabelsStyle {
+    -fx-font: 20px "Akrobat Regular";
+    -fx-cursor: hand;
+}
+
+
+.NameLabels {
+    -fx-text-fill: rgba(255,255,255,0.55);
+    -fx-font: 25px "Akrobat SemiBold";
+}
+
+#StatusLabel {
+    -fx-font: 20px "Decalotype Light";
+    -fx-text-fill: rgba(255,255,255,0.55);
+}
+
+
+#CenterStackPane {
+    -fx-alignment: center;
+}
+
+.SettingsActionButtons {
+    -fx-background-color: rgba(44,62,80,0.2);
+    -fx-min-width: 400;
+    -fx-min-height: 50;
+    -fx-text-fill: rgba(255,255,255,0.7);
+    -fx-font: 20px "Akrobat Bold";
+}
+
+.SettingsActionButtons:hover {
+    -fx-background-color: rgba(0,0,0,0.1);
+    -fx-text-fill: rgba(255,255,255,0.5);
+    -fx-cursor: hand;
+}
+
+#AvailableLabel {
+    -fx-graphic-text-gap: 20;
+    -fx-font: 20px "Decalotype SemiBold";
+    -fx-text-fill: rgba(255,255,255,0.6);
+}
+
+.BottomHBox {
+    -fx-alignment: center;
+}
+
+#MedicineNameLabel {
+    -fx-cursor: hand;
+}
+
+#MedicineNameLabel:hover {
+    -fx-text-fill: rgba(255,255,255,0.4);
+}
+/* END OF RIGHT */

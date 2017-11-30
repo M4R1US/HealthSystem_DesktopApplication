@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.control.Pagination?>
+
+<BorderPane fx:id="InfoPane" stylesheets="@/Stylesheets/AdministratorDashboard.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.InsideControllers.InformationController">
+    <top>
+        <Label fx:id="AboutTitleLabel" text="ABOUT OUR SYSTEM"/>
+    </top>
+    <center>
+        <GridPane fx:id="InformationCenterGridPane" visible="false">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="50" halignment="CENTER"/>
+                <ColumnConstraints percentWidth="50" halignment="CENTER"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="400" maxHeight="400"/>
+            </rowConstraints>
+            <BorderPane fx:id="ServerInformationPane" styleClass="InnerPanes" GridPane.columnIndex="0">
+                <top>
+                    <Label fx:id="ServerInformationLabel" styleClass="InfoTopLabels" text="Basic server information :">
+                        <graphic>
+                            <ImageView fitWidth="32" fitHeight="32">
+                                <Image url="@/Icons/x64/hosting.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Label>
+                </top>
+                <center>
+                    <VBox fx:id="ServerInfoVBox" spacing="20" alignment="CENTER">
+                        <HBox styleClass="ServerInfoCenterHBoxes">
+                            <Label styleClass="NameLabel" text="•  Host :"/>
+                            <Label styleClass="EditLabel" fx:id="HostLabel" text=""/>
+                        </HBox>
+                        <HBox styleClass="ServerInfoCenterHBoxes">
+                            <Label styleClass="NameLabel" text="•  IPV4 :"/>
+                            <Label styleClass="EditLabel" fx:id="IPV4Label" text="ipv4 here"/>
+                        </HBox>
+                        <HBox styleClass="ServerInfoCenterHBoxes">
+                            <Label styleClass="NameLabel" text="•  CPU :"/>
+                            <Label styleClass="EditLabel" text="13 GHZ"/>
+                        </HBox>
+                        <HBox styleClass="ServerInfoCenterHBoxes">
+                            <Label styleClass="NameLabel" text="•  RAM :"/>
+                            <Label styleClass="EditLabel" text="10240 MB"/>
+                        </HBox>
+                    </VBox>
+                </center>
+            </BorderPane>
+            <BorderPane styleClass="InnerPanes" GridPane.columnIndex="1">
+                <top>
+                    <Label fx:id="ProtocolsLabel" styleClass="InfoTopLabels" text="Serving tcp protocols : ">
+                        <graphic>
+                            <ImageView fitWidth="32" fitHeight="32">
+                                <Image url="@/Icons/x64/wifi-connection-signal-symbol.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Label>
+                </top>
+                <center>
+                    <VBox fx:id="ProtocolsVBox" spacing="10" alignment="CENTER">
+                        <HBox styleClass="ServerInfoCenterHBoxes">
+                            <Label styleClass="NameLabel" text="•  Device tunnel :"/>
+                            <Label styleClass="EditLabel" fx:id="DeviceTunnelLabel" text=""/>
+                        </HBox>
+                        <HBox styleClass="ServerInfoCenterHBoxes">
+                            <Label styleClass="NameLabel" text="•  Virtual gsm wire :"/>
+                            <Label styleClass="EditLabel" fx:id="VirtualGsmWireLabel"  text=""/>
+                        </HBox>
+                        <HBox styleClass="ServerInfoCenterHBoxes">
+                            <Label styleClass="NameLabel" text="•  Image sender :"/>
+                            <Label styleClass="EditLabel" fx:id="ImageSenderLabel" text=""/>
+                        </HBox>
+                        <HBox styleClass="ServerInfoCenterHBoxes">
+                            <Label styleClass="NameLabel" text="•  Image receiver :"/>
+                            <Label styleClass="EditLabel" fx:id="ImageReceiverLabel" text=""/>
+                        </HBox>
+                        <HBox styleClass="ServerInfoCenterHBoxes">
+                            <Label styleClass="NameLabel" text="•  Firewall :"/>
+                            <Label styleClass="EditLabel" fx:id="FirewallLabel" text=""/>
+                        </HBox>
+                    </VBox>
+                </center>
+            </BorderPane>
+        </GridPane>
+        <BorderPane fx:id="UserInformationPane" visible="false">
+            <center>
+                <VBox spacing="20" alignment="CENTER">
+                    <Circle fx:id="AvatarCircle" radius="60"/>
+                    <Label fx:id="WelcomeLabel"/>
+                    <Label fx:id="MiddleLabel" text="We are happy having You. Take care of our users"/>
+                    <Label fx:id="LastUsedDeviceLabel" text=""/>
+                </VBox>
+            </center>
+        </BorderPane>
+       <Pagination fx:id="CustomPagination" styleClass="CustomPaginationStyle" maxPageIndicatorCount="2" pageCount="2"/>
+    </center>
+</BorderPane>

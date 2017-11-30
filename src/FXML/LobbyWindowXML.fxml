@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+
+<?import Animations2D.SynchronizationAnimation?>
+<?import javafx.scene.layout.StackPane?>
+<StackPane fx:id="MainStackPane" stylesheets="@/Stylesheets/LobbyWindowStyle.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LobbyController">
+
+    <BorderPane fx:id="MainPane" styleClass="LobbyBasePane">
+        <top>
+            <HBox fx:id="LobbyTitlePane" styleClass="LobbyTopHBoxStyle">
+                <HBox fx:id="AppHBox">
+                    <ImageView fitHeight="24" fitWidth="24">
+                        <Image url="@/Icons/x64/heart.png" />
+                    </ImageView>
+                </HBox>
+                <Label fx:id="LobbyTitleLabel" styleClass="TitleLabel" text="Health System - Lobby" />
+                <HBox fx:id="MinimizeHBox" styleClass="ClickableHBoxes">
+                    <ImageView fx:id="MinimizeIcon" pickOnBounds="true" styleClass="LobbyTitleIcons" fitHeight="24" fitWidth="24">
+                        <Image url="@/Icons/x64/minimize_marked.png"/>
+                    </ImageView>
+                </HBox>
+                <HBox fx:id="ExitHBox" styleClass="ClickableHBoxes">
+                    <ImageView styleClass="LobbyTitleIcons" pickOnBounds="true" fx:id="ExitIcon" fitHeight="24" fitWidth="24">
+                        <Image url="@/Icons/x64/exit_marked.png"/>
+                    </ImageView>
+                </HBox>
+            </HBox>
+        </top>
+        <left>
+            <GridPane fx:id="LobbySideGridPane">
+                <rowConstraints>
+                    <RowConstraints percentHeight="2.4"/>
+                    <RowConstraints percentHeight="24"/>
+                    <RowConstraints percentHeight="24"/>
+                    <RowConstraints percentHeight="24"/>
+                    <RowConstraints percentHeight="24"/>
+                    <RowConstraints percentHeight="2.4"/>
+                </rowConstraints>
+                <columnConstraints>
+                    <ColumnConstraints minWidth="10" maxWidth="10" halignment="CENTER"/>
+                    <ColumnConstraints minWidth="70" maxWidth="70" halignment="CENTER"/>
+                </columnConstraints>
+                <VBox fx:id="DoctorVBox" GridPane.rowIndex="1" GridPane.columnIndex="1" styleClass="LobbyMenuItem">
+                    <ImageView fx:id="DoctorIcon" fitHeight="30" fitWidth="30">
+                        <Image url="@/Icons/x64/doctor_grey.png" />
+                    </ImageView>
+                    <Label styleClass="LobbyMenuItemLabel" text="Doctor" />
+                </VBox>
+                <VBox fx:id="PharmacyVBox" GridPane.rowIndex="2" GridPane.columnIndex="1" styleClass="LobbyMenuItem">
+                    <ImageView fitHeight="30" fitWidth="30">
+                        <Image url="@/Icons/x64/pharmacy_grey.png" />
+                    </ImageView>
+                    <Label styleClass="LobbyMenuItemLabel" text="Pharmacy" />
+                </VBox>
+                <VBox fx:id="PatientVBox" GridPane.rowIndex="3" GridPane.columnIndex="1" styleClass="LobbyMenuItem">
+                    <ImageView fitHeight="30" fitWidth="30">
+                        <Image url="@/Icons/x64/patient-in-a-stretcher.png" />
+                    </ImageView>
+                    <Label styleClass="LobbyMenuItemLabel" text="Patient"/>
+                </VBox>
+                <VBox fx:id="AdminVBox" GridPane.rowIndex="4" GridPane.columnIndex="1" styleClass="LobbyMenuItem">
+                    <ImageView fx:id="AdminIcon" fitHeight="30" fitWidth="30">
+                        <Image url="@/Icons/x64/admin_marked.png"/>
+                    </ImageView>
+                    <Label styleClass="LobbyMenuItemLabel" text="Admin"/>
+                </VBox>
+            </GridPane>
+        </left>
+        <center>
+            <BorderPane fx:id="LoginPane">
+                <top>
+                    <HBox fx:id="LoginTopHBox">
+                        <ImageView fitHeight="24" fitWidth="24">
+                            <Image url="@/Icons/x64/access.png"/>
+                        </ImageView>
+                        <Label fx:id="AuthenticationTitleLabel" text="Authentication [Doctor]"/>
+                    </HBox>
+                </top>
+                <center>
+                    <Pane fx:id="LoginCenterPane">
+                        <GridPane fx:id="LoginHotKeysGridPane">
+                            <columnConstraints>
+                                <ColumnConstraints minWidth="35" halignment="CENTER"/>
+                                <ColumnConstraints minWidth="85" halignment="CENTER"/>
+                                <ColumnConstraints minWidth="85" halignment="CENTER"/>
+                                <ColumnConstraints minWidth="85" halignment="CENTER"/>
+                                <ColumnConstraints minWidth="85" halignment="CENTER"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="40" valignment="CENTER"/>
+                            </rowConstraints>
+                            <ImageView fitWidth="20" fitHeight="20" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                <Image url="@/Icons/x64/keyboard.png"/>
+                            </ImageView>
+                            <Label text="Alt + UP" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                            <Label text="Alt + Down" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                            <Label text="Alt + C" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                            <Label text="ESC button"  GridPane.columnIndex="4" GridPane.rowIndex="0" />
+                        </GridPane>
+                        <GridPane fx:id="LoginDetailsPane">
+                            <columnConstraints>
+                                <ColumnConstraints minWidth="370" halignment="CENTER"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="30" valignment="CENTER"/>
+                                <RowConstraints minHeight="60" valignment="CENTER"/>
+                                <RowConstraints minHeight="50" valignment="CENTER"/>
+                                <RowConstraints minHeight="50" valignment="CENTER"/>
+                            </rowConstraints>
+                            <HBox styleClass="CustomFieldHBox" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                <ImageView fitHeight="25" fitWidth="25">
+                                    <Image url="@/Icons/x64/user.png"/>
+                                    <HBox.margin>
+                                        <Insets left="8"/>
+                                    </HBox.margin>
+                                </ImageView>
+                                <TextField styleClass="DecoratedInputFields"  fx:id="UsernameField"  promptText="Login" />
+                            </HBox>
+                            <HBox styleClass="CustomFieldHBox" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                <ImageView fitHeight="25" fitWidth="25">
+                                    <Image url="@/Icons/x64/password.png"/>
+                                    <HBox.margin>
+                                        <Insets left="8"/>
+                                    </HBox.margin>
+                                </ImageView>
+                                <PasswordField styleClass="DecoratedInputFields"  fx:id="PWField"  promptText="Password" />
+                            </HBox>
+                            <GridPane GridPane.columnIndex="0" GridPane.rowIndex="3">
+                                <columnConstraints>
+                                    <ColumnConstraints percentWidth="10" halignment="CENTER"/>
+                                    <ColumnConstraints percentWidth="15" halignment="RIGHT"/>
+                                    <ColumnConstraints percentWidth="50" halignment="CENTER"/>
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints percentHeight="100" valignment="CENTER"/>
+                                </rowConstraints>
+                            </GridPane>
+                        </GridPane>
+                    </Pane>
+
+                </center>
+                <bottom>
+                    <HBox fx:id="LoginBottomHBox">
+                        <HBox fx:id="LoginButtonHBox" styleClass="LoginButtons">
+                            <ImageView fitHeight="28" fitWidth="28">
+                                <Image url="@/Icons/x64/connect_marked.png"/>
+                            </ImageView>
+                            <Label styleClass="LoginLabels" text="Connect" />
+                        </HBox>
+                        <HBox fx:id="QuitButtonHBox" styleClass="LoginButtons">
+                            <ImageView fitHeight="24" fitWidth="24">
+                                <Image url="@/Icons/x64/exit_marked.png" />
+                            </ImageView>
+                            <Label styleClass="LoginLabels" text="Quit App" />
+                        </HBox>
+                    </HBox>
+                </bottom>
+            </BorderPane>
+        </center>
+        <bottom>
+            <HBox fx:id="LobbyBottom" styleClass="LobbyBottomHBoxStyle">
+                <Label fx:id="MainPageLabel" styleClass="LobbyBottomLabels" text="© Health-System.eu 2017"/>
+                <Label fx:id="SourceLabel" styleClass="LobbyBottomLabels" nodeOrientation="RIGHT_TO_LEFT" text="Dev: Marius Baltramaitis">
+                    <graphic>
+                        <ImageView fitHeight="24" fitWidth="24">
+                            <Image url="@/Icons/DefaultProfileIcons/github.png"/>
+                        </ImageView>
+                    </graphic>
+                </Label>
+            </HBox>
+        </bottom>
+    </BorderPane>
+
+    <BorderPane fx:id="HoverPane" styleClass="HoverPane" visible="false">
+        <center>
+            <VBox fx:id="LoadingVBox">
+                <SynchronizationAnimation fx:id="SyncAnimation" fitHeight="64" fitWidth="64">
+                    <Image url="@/Icons/x64/hourglass.png"/>
+                </SynchronizationAnimation>
+                <Label fx:id="loginDetailsInfo" text="Please enter login details"/>
+            </VBox>
+        </center>
+
+        <bottom>
+            <HBox fx:id="BackHBox">
+                <Label text="Click here to go back"/>
+            </HBox>
+        </bottom>
+    </BorderPane>
+</StackPane>

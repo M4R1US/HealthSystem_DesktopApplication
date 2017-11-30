@@ -1,0 +1,237 @@
+
+/* TOP */
+
+#InsertPrescriptionTopSelectionBarGridPane {
+    -fx-background-color: rgba(44,62,80,0.2);
+}
+
+.SwitchHBoxes {
+    -fx-alignment: center;
+}
+
+.SwitchHBoxes:hover {
+    -fx-cursor: hand;
+}
+
+.SwitchLabels {
+    -fx-text-fill: #f8f8f8;
+    -fx-font: 17px "Akrobal Light";
+    -fx-alignment: center;
+}
+
+
+/* END OF TOP */
+
+/* CENTER */
+
+.BrowsePersonSearchPaneTopHBoxStyle {
+    -fx-background-color: rgba(69,122,136,0.6);
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: rgba(255,255,255,0.2);
+    -fx-min-height: 50;
+    -fx-spacing: 10;
+}
+
+.BrowsePersonSearchPaneTopHBoxStyle .text-field {
+    -fx-text-fill: #f8f8f8;
+    -fx-font-size: 18;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0 0 5 0;
+    -fx-min-height: 55;
+    -fx-border-width: 0 1 0 0;
+    -fx-border-color: #a6a6a6;
+    -fx-border-insets: 5 0 7 0;
+}
+
+.BrowseIcon:hover {
+    -fx-opacity: 0.5;
+    -fx-cursor:hand;
+}
+
+.BrowsePersonListViewPane {
+    -fx-background-color: rgba(69,122,136,0.6);
+    -fx-background-insets: 10 0 0 0;
+}
+
+/* LIST_VIEWS */
+
+.DefaultBrowseListView {
+    -fx-border-insets: 5 5 15 5;
+    -fx-border-color:transparent;
+    -fx-padding: 5 0 0 0;
+    -fx-background-color: transparent;
+    -fx-border-width: 4 4 4 4;
+}
+
+.DefaultBrowseListView .list-cell:odd, .list-cell:even, .scroll-bar{
+    -fx-background-color: transparent;
+}
+
+.DefaultBrowseListView .list-cell:odd, .list-cell:even,
+.scroll-bar:vertical .increment-button, .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+}
+
+.DefaultBrowseListView .scroll-bar:horizontal .increment-arrow,
+.scroll-bar:horizontal .decrement-arrow,
+.scroll-bar:horizontal .increment-button,
+.scroll-bar:horizontal .decrement-button {
+    -fx-padding: 0;
+}
+
+.DefaultBrowseListView .list-cell {
+    -fx-text-fill: rgba(255,255,255,0.6);
+    -fx-font: 20px "Akrobat Bold";
+}
+
+.DefaultBrowseListView .scroll-bar:vertical .increment-arrow, .scroll-bar:vertical .decrement-arrow, .thumb {
+    -fx-background-color: rgba(0,51,102,0.5);
+}
+
+.DefaultBrowseListView .list-cell:selected {
+    -fx-background-color: rgba(0,0,0,0.10);
+    -fx-padding: 0 0 0 30;
+    -fx-font: 25px "Akrobat Bold";
+}
+
+
+/* END OF LIST_VIEWS */
+
+
+.CustomPaginationStyle {
+    -fx-arrows-visible: false;
+    -fx-tooltip-visible: false;
+    -fx-page-information-visible:false;
+}
+
+#CustomPagination .pagination-control {
+    -fx-min-height: 50;
+    -fx-max-height: 50;
+    -fx-background-color: rgba(69,122,136,0.8);
+    -fx-padding: 0 0 10 0;
+}
+.SearchPanes {
+    -fx-padding: 20 0 20 0;
+}
+
+.RightBrowsePanes {
+    -fx-padding: 20 0 20 0;
+    -fx-alignment: center;
+}
+
+.CenterSplitVBox {
+    -fx-spacing: 20;
+    -fx-background-color: rgba(255,255,255,0.15);
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: rgba(0,0,0,0.2);
+    -fx-border-insets: 0 0 10 0;
+    -fx-alignment: center;
+    -fx-background-insets: 0 0 10 0;
+}
+
+.CenterSplitVBox .label {
+    -fx-font: 20pt "Decalotype Light";
+    -fx-text-fill: rgba(0,0,0,0.4);
+}
+.NextHBoxStyle {
+    -fx-background-color: rgba(0,51,102,0.6);
+    -fx-min-height: 60;
+    -fx-alignment: center;
+
+}
+
+.NextHBoxStyle .label {
+    -fx-font: 20px "Decalotype Medium";
+    -fx-text-fill: rgba(248,248,248,0.8);
+    -fx-alignment: center;
+}
+
+.LoadingPanes {
+    -fx-background-color: rgba(44, 62, 80,0.6);
+    -fx-max-height: 200;
+    -fx-max-width: 200;
+    -fx-background-radius: 100 100 100 100;
+}
+
+#MedicineInformationHBox {
+    -fx-background-color: rgba(255,255,255,0.05);
+    -fx-spacing: 40;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: rgba(0,0,0,0.2);
+}
+
+#MedicineNameLabel {
+    -fx-text-fill: rgba(0,0,0,0.4);
+    -fx-font: 18pt "Akrobat Bold";
+}
+
+#MedicineLookupLabel{
+    -fx-background-color: rgba(0,0,0,0.15);
+    -fx-text-fill: rgba(255,255,255,0.6);
+    -fx-min-height: 70;
+    -fx-background-insets: 10 0 10 0;
+    -fx-alignment: center;
+    -fx-font: 16pt "Akrobat Normal";
+}
+
+#MedicineLookupLabel:hover {
+    -fx-border-insets: 10 0 10 0;
+}
+
+#MedicineLookupLabel:hover, .NextHBoxStyle:hover{
+    -fx-cursor: hand;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: rgba(255,255,255,0.3);
+}
+
+.AdditionalInfoTextArea {
+    -fx-text-fill: #f8f8f8;
+}
+
+.AdditionalInfoTextArea .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.AdditionalInfoTextArea .scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+
+
+.AdditionalInfoTextArea .scroll-pane .content{
+    -fx-background-color: transparent;
+}
+
+.AdditionalInfoTextArea {
+    -fx-pref-height: 2000;
+    -fx-prompt-text-fill: #c6c6c6;
+    -fx-font-size: 18;
+    -fx-background-color:transparent;
+}
+
+.RoundedCheckBox .box{
+    -fx-background-color: transparent;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: rgba(0, 51, 102, 0.8);
+    -fx-border-radius: 25 25 25 25;
+}
+
+.RoundedCheckBox .label {
+    -fx-text-fill: rgba(255,255,255,1);
+}
+
+.RoundedCheckBox:selected .mark {
+    -fx-background-color: rgba(0, 51, 102, 0.8);
+}
+
+#UploadPane  {
+    -fx-background-color: rgba(44, 62, 80,0.6);
+    -fx-background-insets: 10 10 10 10;
+}
+
+#LoadingLabel {
+    -fx-text-fill: rgba(255,255,255,0.6);
+    -fx-font: 20px "Decalotype Light";
+}
+
+/* END OF CENTER */
+
